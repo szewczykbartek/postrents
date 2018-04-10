@@ -1,0 +1,6866 @@
+@font-face {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  src: url('../fonts/HelveticaNeueLTPro-Bd_gdi.eot');
+  src: url('../fonts/HelveticaNeueLTPro-Bd_gdi.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/HelveticaNeueLTPro-Bd_gdi.woff') format('woff'),
+  url('../fonts/HelveticaNeueLTPro-Bd_gdi.ttf') format('truetype'),
+  url('../fonts/HelveticaNeueLTPro-Bd_gdi.svg#HelveticaNeueLTPro-Bd') format('svg');
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-25CA;
+}
+@font-face {
+  font-family: 'HelveticaNeueLTPro-Md';
+  src: url('../fonts/HelveticaNeueLTPro-Md_gdi.eot');
+  src: url('../fonts/HelveticaNeueLTPro-Md_gdi.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/HelveticaNeueLTPro-Md_gdi.woff') format('woff'),
+  url('../fonts/HelveticaNeueLTPro-Md_gdi.ttf') format('truetype'),
+  url('../fonts/HelveticaNeueLTPro-Md_gdi.svg#HelveticaNeueLTPro-Md') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-25CA;
+}
+@font-face {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  src: url('../fonts/HelveticaNeueLTPro-Roman_gdi.eot');
+  src: url('../fonts/HelveticaNeueLTPro-Roman_gdi.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/HelveticaNeueLTPro-Roman_gdi.woff') format('woff'),
+  url('../fonts/HelveticaNeueLTPro-Roman_gdi.ttf') format('truetype'),
+  url('../fonts/HelveticaNeueLTPro-Roman_gdi.svg#HelveticaNeueLTPro-Roman') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-25CA;
+}
+
+
+* {
+  outline: none;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0 !important;
+
+  font-family: 'HelveticaNeueLTPro-Roman', Arial;
+  font-size: 13px;
+  font-kerning: normal;
+  color: #1c1c1c;
+  background-color: #f1f1f1;
+
+  -webkit-text-size-adjust: 100%;
+
+  line-height: 20px;
+  position: relative;
+}
+body {
+  overflow-y: scroll;
+}
+body.overlay {
+  overflow-y: hidden;
+}
+html.WpReset {
+  margin: 0 !important;
+}
+body.Hide {
+  overflow: hidden
+}
+body.Hide #Header,
+body.Hide #Contents,
+body.Hide #Background {
+  opacity: 0;
+}
+
+body.home {
+  background: url(../img/BackgroundMain.png) top center repeat-y;
+}
+
+
+
+a,
+input[type="submit"],
+button {
+  cursor: pointer;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+
+img,
+a img {
+  border: none;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+hr,
+ul,
+li {
+  margin: 0px;
+  padding: 0px;
+  line-height: normal;
+}
+ul,
+li {
+  list-style: none;
+}
+
+.Pad20 {
+  padding: 20px;
+}
+.Pad70 {
+  padding: 70px;
+}
+
+.MargL10 {
+  margin-left: 10px;
+}
+.MargB10 {
+  margin-bottom: 10px;
+}
+.MargT10 {
+  margin-top: 10px;
+}
+
+
+.Clear {
+  clear: both;
+  margin: 0px;
+  padding: 0px;
+}
+
+.alignleft,
+.FloatL {
+  float: left;
+}
+.alignleft {
+  margin: 25px 25px 25px 0;
+}
+.alignright,
+.FloatR {
+  float: right !important;
+}
+.alignright {
+  margin: 25px 0 25px 25px;
+}
+.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
+.textLeft {
+  text-align: left;
+}
+.textCenter {
+  text-align: center !important;
+}
+.textRight {
+  text-align: right;
+}
+.textUppercase {
+  text-transform: uppercase !important;
+}
+.textItalic {
+  font-style: italic !important;
+}
+
+.Table {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.TableCell {
+  display: table-cell !important;
+  vertical-align: middle;
+  height: 100%;
+  width: 100%;
+  float: none !important;
+}
+
+.Cl {
+  display: block;
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: relative;
+}
+
+.Cl.Cl1-3 {
+  width: 33.333%;
+}
+
+.Cl.Cl1-8 {
+  width: 12.5%;
+}
+.Cl.Cl2-8 {
+  width: 25%;
+}
+.Cl.Cl3-8 {
+  width: 37.5%;
+}
+.Cl.Cl4-8 {
+  width: 50%;
+}
+.Cl.Cl5-8 {
+  width: 62.5%;
+}
+.Cl.Cl6-8 {
+  width: 75%;
+}
+
+.PadClLeft7 {
+  padding-left: 7px;
+}
+.PadClLeft15 {
+  padding-left: 15px;
+}
+.PadClRight7 {
+  padding-right: 7px;
+}
+.PadClRight15 {
+  padding-right: 15px;
+}
+
+.PadClLeft20 {
+  padding-left: 20px;
+}
+.PadClRight20 {
+  padding-right: 20px;
+}
+.PadClLeft30 {
+  padding-left: 30px;
+}
+.PadClRight30 {
+  padding-right: 30px;
+}
+
+.Cl.ClH100p {
+  height: 100%;
+}
+
+
+.Buffor {
+  display: none !important;
+}
+
+
+.Relative {
+  position: relative;
+}
+
+
+
+.PadT50 {
+  padding-top: 50px;
+}
+.PadB50 {
+  padding-bottom: 50px;
+}
+
+
+.irs {
+  display: block;
+  width: 100%;
+  khtml-user-select: none;
+  moz-user-select: none;
+  ms-user-select: none;
+  position: relative;
+  user-select: none;
+  webkit-touch-callout: none;
+  webkit-user-select: none;
+}
+.irs-line {
+  display: block;
+  outline: none !important;
+  overflow: hidden;
+  position: relative;
+}
+.irs-line-left,
+.irs-line-mid,
+.irs-line-right {
+  display: block;
+  position: absolute;
+  top: 0;
+}
+.irs-line-left {
+  left: 0;
+  width: 11%;
+}
+.irs-line-mid {
+  left: 9%;
+  width: 82%;
+}
+.irs-line-right {
+  right: 0;
+  width: 11%;
+}
+.irs-bar {
+  display: block;
+  left: 0;
+  position: absolute;
+  width: 0;
+}
+.irs-bar-edge {
+  display: block;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+.irs-shadow {
+  display: none;
+  left: 0;
+  position: absolute;
+  width: 0;
+}
+.irs-slider {
+  cursor: default;
+  display: block;
+  position: absolute;
+  z-index: 1;
+}
+.irs-slider {
+  z-index: 2;
+}
+.irs-slider::after {
+  content: ".";
+  text-indent: -9999px;
+  width: 30px;
+  height: 50px;
+  position: absolute;
+  left: -12px;
+  top: -32px;
+}
+.irs-min {
+  cursor: default;
+  display: block;
+  left: 0;
+  position: absolute;
+}
+.irs-max {
+  cursor: default;
+  display: block;
+  position: absolute;
+  right: 0;
+}
+.irs-from,
+.irs-to,
+.irs-single {
+  cursor: default;
+  display: block;
+  left: 0;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  padding: 0 20px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.irs-grid {
+  bottom: 0;
+  display: none;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+.irs-with-grid .irs-grid {
+  display: block;
+}
+.irs-grid-pol {
+  background: #000;
+  height: 8px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1px;
+}
+.irs-grid-pol.small {
+  height: 4px;
+}
+.irs-grid-text {
+  bottom: 0;
+  color: #000;
+  font-size: 9px;
+  left: 0;
+  line-height: 9px;
+  padding: 0 3px;
+  position: absolute;
+  text-align: center;
+  white-space: nowrap;
+}
+.irs-disable-mask {
+  background: rgba(0, 0, 0, 0.0);
+  cursor: default;
+  display: block;
+  height: 100%;
+  left: -1%;
+  position: absolute;
+  top: 0;
+  width: 102%;
+  z-index: 2;
+}
+.lt-ie9 .irs-disable-mask {
+  background: #000;
+  cursor: not-allowed;
+  filter: alpha(opacity=0);
+}
+.irs-disabled {
+  opacity: 0.4;
+}
+.irs-hidden-input {
+  background: none !important;
+  border-color: transparent !important;
+  border-style: solid !important;
+  display: block !important;
+  font-size: 0 !important;
+  height: 0 !important;
+  left: 0 !important;
+  line-height: 0 !important;
+  margin: 0 !important;
+  outline: none !important;
+  padding: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 0 !important;
+  z-index: -9999 !important;
+}
+.irs {
+  height: 55px;
+}
+.irs-with-grid {
+  height: 75px;
+}
+.irs-line {
+  background: #b5a851;
+  height: 1px;
+  top: 34px;
+}
+.irs-line-left {
+  height: 8px;
+}
+.irs-line-mid {
+  height: 8px;
+}
+.irs-line-right {
+  height: 8px;
+}
+.irs-bar {
+  background: #000;
+  height: 2px;
+  top: 33px;
+}
+.irs-bar-edge {
+  background: #428bca;
+  background: linear-gradient(to top, rgba(66, 139, 202, 1) 0%, rgba(127, 195, 232, 1) 100%);
+  border: 1px solid #428bca;
+  border-radius: 16px 0 0 16px;
+  border-right: 0;
+  height: 10px;
+  moz-border-radius: 16px 0 0 16px;
+  top: 33px;
+  width: 14px;
+}
+.irs-shadow {
+  background: #000;
+  border-radius: 5px;
+  height: 2px;
+  moz-border-radius: 5px;
+  opacity: 0.3;
+  top: 38px;
+}
+.lt-ie9 .irs-shadow {
+  filter: alpha(opacity=30);
+}
+.irs-slider {
+  width: 5px;
+  height: 8px;
+  background: #000000;
+  cursor: pointer;
+  top: 30px;
+}
+.irs-slider.state_hover,
+.irs-slider:hover {
+  background: #4a4a4a;
+}
+.irs-min,
+.irs-max {
+  color: #d7d7d7;
+  display: none;
+  font-size: 12px;
+  line-height: 1.333;
+  text-shadow: none;
+  top: 0;
+}
+.lt-ie9 .irs-min,
+.lt-ie9 .irs-max {
+  background: #ccc;
+}
+.irs-from,
+.irs-to,
+.irs-single {
+  color: #000;
+  font-size: 11px;
+  line-height: 1.333;
+  text-shadow: none;
+}
+
+
+.NiceCheckbox {
+  font-size: 11px;
+  letter-spacing: 0.4px;
+  font-kerning: auto;
+  line-height: 25px;
+  cursor: pointer;
+  position: relative;
+  padding-left: 25px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.NiceCheckbox.Hide {
+  display: none !important;
+}
+.NiceCheckbox input {
+  position: absolute;
+  left: -9999px;
+}
+.NiceCheckbox::before {
+  content: "\0020";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: #d0c265;
+  position: absolute;
+  top: 7px;
+  left: 0;
+}
+.NiceCheckbox:hover::before {
+  background: #b6a94e;
+}
+.NiceCheckbox.on::before {
+  content: "\0020";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: #000;
+  margin-right: 10px;
+}
+
+
+
+
+
+
+.Breadcrumb {
+  width: 100%;
+  height: 75px;
+  line-height: 75px;
+  background: #e9d762;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 14px;
+  color: #000;
+  padding: 0 30px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+.Breadcrumb a {
+  color: #000;
+  text-decoration: none;
+}
+.Breadcrumb a:hover {
+  color: #3e3e3e
+}
+
+.BreadcrumbInfo {
+  width: 50%;
+  line-height: 75px;
+
+  position: absolute;
+  top: 0;
+  right: 0px;
+  z-index: 3;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 30px;
+  color: #000;
+  text-align: right;
+  padding: 0 30px;
+}
+
+
+
+/* ------------
+   Scroll
+   ------------ */
+
+.scrollbarEngine {
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+
+  /*    padding-top: 140px;*/
+  padding-top: 0px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.scrollbarEngine .viewport {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.scrollbarEngine .overview {
+  width: 100%;
+  list-style: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0;
+  margin: 0;
+}
+.scrollbarEngine .scrollbar {
+  width: 35px;
+  height: 100%;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  z-index: 99;
+}
+.scrollbarEngine .track {
+  width: 26px;
+  height: 100%;
+  position: relative;
+}
+.scrollbarEngine .thumb {
+  display: block;
+  width: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.scrollbarEngine .thumb .end {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #6acde9;
+}
+.scrollbarEngine .thumb:hover .end {
+  background: #fff;
+}
+.scrollbarEngine .thumb:active .end {
+  background: #fff;
+}
+.scrollbarEngine .disable {
+  display: none;
+}
+.noSelect {
+  user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
+
+
+
+
+/*
+
+==== TRANSITIONS ====
+
+*/
+
+.pt-page {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+.pt-page-current,
+.no-js .pt-page {}
+.pt-page[data-active="active"] {
+  display: block;
+}
+
+
+/* ------------
+   Loader
+   ------------ */
+
+.Loader {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  opacity: 0;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.LoaderMain .Loader {
+  z-index: 998;
+}
+.LoaderStart .Loader {
+  opacity: 1;
+}
+
+.Loader .Cut {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+  background: #f1f1f1;
+}
+.Loader .Background {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+.Loader .Table {
+  position: absolute;
+  right: 0;
+}
+.Loader .Logo {
+  display: block;
+  width: 135px;
+  height: 49px;
+  background: url(../img/Logo.png) center center no-repeat;
+  margin: 0 auto;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+  .Loader .Logo {
+    background: url('../img/LogoRetina.png') center center no-repeat;
+    background-size: cover;
+  }
+}
+
+
+
+
+
+#Background {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 0;
+}
+#Background .LeftSide {
+  display: block;
+  width: 50%;
+  height: 100%;
+  background: #f1f1f1;
+  float: left;
+}
+#Background .RightSide {
+  display: block;
+  width: 50%;
+  height: 100%;
+  background: #e5d66e;
+  float: left;
+}
+
+
+
+
+
+
+#Contents {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+
+  -webkit-transition: opacity 0.6s ease-in;
+  -moz-transition: opacity 0.6s ease-in;
+  -o-transition: opacity 0.6s ease-in;
+  transition: opacity 0.6s ease-in;
+}
+#Contents.OpacityHide {
+  opacity: 0;
+}
+
+#Contents .Space {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+#Content {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+
+
+
+.Page {
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 0 0 55px;
+}
+
+
+.Container {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.ContainerPlus {
+  width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+#Header {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: 35px 0 30px;
+  z-index: 1;
+}
+#Header .Logo {
+  display: block;
+  width: 135px;
+  height: 49px;
+  background: url(../img/Logo.png) center center no-repeat;
+  float: left;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+  #Header .Logo {
+    background: url('../img/LogoRetina.png') center center no-repeat;
+    background-size: cover;
+  }
+}
+#Header .Pos {
+  display: block;
+  line-height: 20px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  float: left;
+  width: 12.5%;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+#Header .Pos[data-slug="news-press"] {
+  padding-left: 30px;
+}
+#Header a {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 14px;
+  color: #000;
+  text-decoration: none;
+}
+#Header a:hover,
+#Header a.active {
+  color: #3e3e3e;
+}
+#Header .Client {
+  cursor: pointer;
+  margin-top: 12px;
+  margin-right: 20px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 135px;
+}
+#Header .Client .Text {
+  float: left;
+  font-size: 11px;
+  text-align: right;
+  padding: 5px 20px;
+  line-height: 16px;
+  color: #000;
+}
+#Header .Client:hover .Text {
+  color: #3e3e3e;
+}
+#Header .Client .Icon {
+  width: 40px;
+  height: 40px;
+  float: left;
+  background: #000;
+}
+#Header .Client .Icon svg {
+  fill: #e9d762;
+}
+#Header .Client:hover .Icon svg {
+  fill: #3e3e3e;
+}
+#Header .MenuMobile {
+  display: none;
+}
+
+
+.admin #Header .Client .Icon,
+.buildings #Header .Client .Icon,
+.contact #Header .Client .Icon,
+.our-properties #Header .Client .Icon,
+.social-responsibilities #Header .Client .Icon,
+.about-company #Header .Client .Icon,
+.corporate-housing #Header .Client .Icon,
+.blog #Header .Client .Icon,
+.other #Header .Client .Icon {
+  background: #e9d762;
+}
+
+.admin #Header .Client .Icon svg,
+.buildings #Header .Client .Icon svg,
+.contact #Header .Client .Icon svg,
+.our-properties #Header .Client .Icon svg,
+.social-responsibilities #Header .Client .Icon svg,
+.about-company #Header .Client .Icon svg,
+.corporate-housing #Header .Client .Icon svg,
+.blog #Header .Client .Icon svg,
+.other #Header .Client .Icon svg {
+  fill: #000;
+}
+
+.admin #Header .Client:hover .Icon svg,
+.buildings #Header .Client:hover .Icon svg,
+.contact #Header .Client:hover .Icon svg,
+.our-properties #Header .Client:hover .Icon svg,
+.social-responsibilities #Header .Client:hover .Icon svg,
+.about-company #Header .Client:hover .Icon svg,
+.corporate-housing #Header .Client:hover .Icon svg,
+.blog #Header .Client:hover .Icon svg,
+.other #Header .Client:hover .Icon svg {
+  fill: #3e3e3e;
+}
+
+
+#Footer {
+  padding-bottom: 60px;
+  position: relative;
+  z-index: -1;
+  z-index: 1;
+}
+#Footer .Header {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 12px;
+  line-height: 17px;
+  color: #000;
+}
+#Footer .Number {
+  margin-bottom: 10px;
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 16px;
+}
+#Footer .Link a {
+  display: block;
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 11px;
+  text-decoration: none;
+  line-height: 17px;
+  color: rgba(0, 0, 0, 0.5)
+}
+#Footer .Link a:hover {
+  color: rgba(0, 0, 0, 0.9)
+}
+
+
+#OverlayClient {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+#OverlayClient .Box {
+  display: block;
+  width: 450px;
+  background: #fff;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+#OverlayClient .Box .Header {
+  background-color: #000;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 23px;
+  color: #fff;
+  padding: 40px;
+}
+#OverlayClient .Box .List {
+  padding: 20px;
+}
+#OverlayClient .Box .List a {
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #000;
+  font-family: 'HelveticaNeueLTPro-Md';
+  font-size: 14px;
+}
+#OverlayClient .Box .List a:hover {
+  background: #deda74;
+}
+
+#OverlayClient .Mask {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+
+.Filter .Handle {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.Filter .Handle:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+.Filter .Handle a {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 13px;
+  color: #000;
+  text-decoration: none;
+  border-left: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 35px 20px;
+}
+.Filter .Handle a.BorderNo {
+  border: none;
+}
+.Filter .Handle a.first {
+  border: none;
+}
+.Filter .Handle a .Arrow {
+  float: right;
+}
+.Filter.show .Handle a .Arrow {
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.Filter .Handle a .Txt2 {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 9px;
+}
+
+.Filter .More {
+  display: block;
+  height: 0;
+  background: #e5d66e;
+  overflow: hidden;
+}
+.Filter.show .More {
+  height: auto;
+}
+.Page.Main .Filter.show .More {
+  margin-bottom: 0px;
+}
+.Filter.show .More {
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.Filter .More .Box {
+  height: 100%;
+  border-left: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 25px 20px;
+}
+.Filter .More .Box .Txt2 {
+  display: none;
+}
+.Filter .More .Box.Range {
+  padding: 40px 30px;
+}
+.Filter .More .Box.first {
+  width: 300px;
+  border: none !important;
+}
+.Filter .More .Box.last {
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+}
+.Filter .More .Bt {
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  background: #e1d26c;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 13px;
+  color: #000;
+  text-align: center;
+  cursor: pointer;
+}
+.Filter .More .Bt:not(.wait):hover {
+  background: #dbcc69;
+}
+.Filter .More .Bt.wait {
+  cursor: default;
+}
+
+
+.Buildings .Data {
+  display: none;
+}
+
+
+/*
+
+MAIN PAGE
+
+*/
+
+
+/*.Page.Main .PageBackground {
+    display: block;
+    width: 100%; height: 100%;
+    min-width: 800px;
+    position: fixed;
+    top: 0;
+    z-index: 0;
+}
+.Page.Main .PageBackground .LeftSide {
+    display: block;
+    width: 50%; height: 100%;
+    background: #f1f1f1;
+    float: left;
+}
+.Page.Main .PageBackground .RightSide {
+    display: block;
+    width: 50%; height: 100%;
+    background: #e5d66e;
+    float: left;
+    }*/
+
+.ZoomMap {
+  display: block;
+  width: 40px;
+  height: 40px;
+  line-height: 37px;
+  background: #e5d66e;
+  position: absolute;
+  left: 70px;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 26px;
+  text-align: center;
+  z-index: 99;
+}
+.ZoomMap.In {
+  top: 70px;
+}
+.ZoomMap.Out {
+  top: 120px;
+}
+.ZoomMap:hover {
+  background: #fae974;
+}
+
+
+
+.infoBox {
+  display: block;
+  width: auto;
+  cursor: pointer !important;
+}
+.infoBox .Title.Other {
+  font-size: 12px;
+  line-height: 18px;
+  white-space: nowrap;
+  padding: 7px 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  background: #fff;
+  -webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.2);
+  -moz-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.2);
+  box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.2);
+}
+.infoBox .Title.Main {
+  height: 62px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 14px 30px 0 15px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background: url('../img/MarkerMainBackground.png') bottom right no-repeat;
+}
+.infoBox .Title.Main.invert {
+  padding: 14px 15px 0 30px;
+}
+.infoBox .Title.Main.Small {
+  height: 44px;
+  font-size: 10px;
+  line-height: 18px;
+  font-weight: 500;
+  color: #000;
+  white-space: nowrap;
+  padding: 6px 20px 0 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background: url('../img/MarkerMainBackground.png') bottom right no-repeat;
+}
+.infoBox .Title.Main.invert {
+  background-position: bottom left;
+  position: relative;
+  left: -100%;
+}
+.infoBox .Title.Main.Small.invert {
+  padding: 6px 10px 0 20px;
+}
+.infoBox .Title {
+  color: rgba(0, 0, 0, 1);
+  text-decoration: none;
+}
+.infoBox:hover .Title {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+.infoBox .Background {
+  display: block;
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+.infoBox img {
+  display: none;
+}
+.infoBox .Title.Other a {
+  color: #000;
+  text-decoration: none;
+}
+
+
+
+
+.RollContent {
+  display: none;
+}
+
+
+
+body.home #Background {
+  display: block;
+}
+
+.Page.Main .FilterContainer {
+  position: relative;
+  z-index: 2;
+}
+
+.Page.Main .Filter .More {
+  width: 100%;
+  position: absolute;
+  top: 92px;
+  left: 0;
+  margin-bottom: 0px;
+}
+@media screen and (max-height: 700px) {
+  .Page.Main .Filter .More {
+    top: 72px;
+    left: 0;
+  }
+}
+@media (max-width: 760px) {
+  .Page.Main .Filter .More {
+    top: 52px;
+    left: 0;
+  }
+}
+
+
+.Page.Main .Video {
+  height: 600px;
+  background: gray;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 1180px) {
+  .Page.Main .Video {
+    height: 500px;
+  }
+}
+@media (max-width: 900px) {
+  .Page.Main .Video {
+    height: 400px;
+  }
+}
+
+
+.Page.Main .Video .Text {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -o-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 1;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 35px;
+  line-height: 45px;
+  color: #fff;
+}
+
+.Page.Main .Video .video-js {
+  width: 100% !important;
+  height: 100% !important;
+}
+.Page.Main .Video video {
+  width: 100%;
+  height: auto;
+  position: absolute;
+}
+.Page.Main .Video.top video {
+  top: -10px;
+}
+.Page.Main .Video.bottom video {
+  bottom: -10px;
+}
+.Page.Main .Video.center video {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.Page.Main .Video .vjs-poster {
+  width: 100%;
+  height: 100%;
+  background-position: bottom center;
+}
+.Page.Main .Video .vjs-tech {
+  pointer-events: none;
+}
+.Page.Main .Video .vjs-control-bar * {
+  display: none;
+}
+.Page.Main .Video .vjs-control-bar .vjs-mute-control {
+  /*    display: block;*/
+  display: none;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  width: 200px;
+  height: 20px;
+  z-index: 4;
+  margin-left: -600px;
+  cursor: pointer;
+
+  background-image: url('../img/Volume100.svg');
+  background-position: center left;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 1240px) {
+  .Page.Main .Video .vjs-control-bar .vjs-mute-control {
+    margin-left: -500px;
+  }
+}
+@media screen and (max-width: 1040px) {
+  .Page.Main .Video .vjs-control-bar .vjs-mute-control {
+    margin-left: -400px;
+  }
+}
+@media screen and (max-width: 780px) {
+  .Page.Main .Video .vjs-control-bar .vjs-mute-control {
+    display: none;
+  }
+}
+
+.Page.Main .Video .vjs-control-bar .vjs-mute-control.vjs-vol-3 {
+  background-image: url('../img/Volume100.svg');
+}
+.Page.Main .Video .vjs-control-bar .vjs-mute-control::before,
+.Page.Main .Video .vjs-control-bar .vjs-mute-control.vjs-vol-3::before {
+  content: "Turn sound off";
+  color: #fff;
+  line-height: 22px;
+  padding-left: 35px;
+}
+
+.Page.Main .Video .vjs-control-bar .vjs-mute-control.vjs-vol-0 {
+  background-image: url('../img/Volume0.svg');
+}
+.Page.Main .Video .vjs-control-bar .vjs-mute-control.vjs-vol-0::before {
+  content: "Turn sound on";
+  color: #fff;
+  line-height: 22px;
+  padding-left: 35px;
+}
+
+
+
+.Page.Main .Buildings {
+  margin-top: -100px;
+}
+.Page.Main .Buildings .Building {
+  display: block;
+  width: 50%;
+  float: left;
+  position: relative;
+  background: #f1f1f1;
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  -o-transition: background 0.3s;
+  transition: background 0.3s;
+}
+.Page.Main .Buildings .Building.coming-soon {
+  background: #f1f1f1 !important;
+}
+.Page.Main .Buildings .Building.off,
+.Page.Main .Buildings .Building.coming-soon {
+  cursor: default;
+}
+.Page.Main .Buildings .Building:hover:not(.off) {
+  background: #e5d66e;
+}
+.Page.Main .Buildings .Building.anim,
+.Page.Main .Buildings .Building.off {
+  background: #e5d66e;
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  -o-transition: background 0.3s;
+  transition: background 0.3s;
+}
+
+.Page.Main .Buildings .Building.Size2x1 {
+  height: 190px;
+}
+.Page.Main .Buildings .Building.Size2x2 {
+  height: 380px;
+}
+.Page.Main .Buildings .Building.MargT {
+  margin-top: 190px;
+}
+.Page.Main .Buildings .Building.MargL25p {
+  margin-left: 25%;
+}
+.Page.Main .Buildings .Building .Change {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #dbdbda;
+  z-index: 0;
+  opacity: 0;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.Page.Main .Buildings .Building.change .Change {
+  opacity: 1;
+}
+.Page.Main .Buildings .Building .Mask {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(150, 150, 150, 0.2);
+  position: absolute;
+  z-index: 2;
+}
+.Page.Main .Buildings .Building.off .Mask {
+  display: block;
+}
+.Page.Main .Buildings .Building .Address {
+  font-family: Georgia;
+  font-size: 11px;
+  line-height: 15px;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+}
+.Page.Main .Buildings .Building .Address .ShowOnMap {
+  display: none;
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: underline;
+  margin-top: 5px;
+}
+.Page.Main .Buildings .Building:hover:not(.off) .Address .ShowOnMap {
+  display: block;
+}
+.Page.Main .Buildings .Building .Address .ShowOnMap:hover:not(.off) {
+  color: rgba(0, 0, 0, 1);
+}
+
+.Page.Main .Buildings .Building.coming-soon .Address .ShowOnMap {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.Page.Main .Buildings .Building .Name {
+  height: 100%;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 22px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+.Page.Main .Buildings .Building.Size2x1 .Name {
+  font-size: 22px;
+  line-height: 30px;
+}
+.Page.Main .Buildings .Building.Size2x2 .Name {
+  font-size: 30px;
+  line-height: 35px;
+}
+.Page.Main .Buildings .Building .Units {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 11px;
+  color: #000;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+.Page.Main .Buildings .Building .Units .Count {
+  display: block;
+  width: 26px;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 16px;
+  color: #000;
+  padding-right: 10px;
+  text-align: center;
+  position: relative;
+  float: left;
+}
+.Page.Main .Buildings .Building .Units .Count.count1 {
+  margin-left: -6px;
+}
+.Page.Main .Buildings .Building .Units .Count.count2 {
+  margin-left: -3px;
+}
+.Page.Main .Buildings .Building .Units .Count.count3 {
+  margin-left: 0px;
+}
+.Page.Main .Buildings .Building .Units .Count.count4 {
+  margin-left: 3px;
+}
+.Page.Main .Buildings .Building .Units .Count .Load {
+  display: none;
+  width: 26px;
+  height: 26px;
+  background: url('../img/LoaderUnit.gif');
+  position: absolute;
+  top: -3px;
+  left: -1px;
+}
+.Page.Main .Buildings .Building .Units .Txt {
+  white-space: nowrap;
+  float: left;
+}
+.Page.Main .Buildings .Building .PhotoContainer {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: gray;
+  position: relative;
+  overflow: hidden;
+}
+.Page.Main .Buildings .Building .PhotoContainer .Apla {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.Page.Main .Buildings .Building:hover:not(.off) .PhotoContainer .Apla {
+  background: rgba(0, 0, 0, 0);
+}
+.Page.Main .Buildings .Building .PhotoContainer .Photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover !important;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.15s;
+  -moz-transition: all 0.15s;
+  -o-transition: all 0.15s;
+  transition: all 0.15s;
+}
+.Page.Main .Buildings .Building[data-building="goldtex"] .Photo {
+  background-image: url('../img/Building1.jpg')
+}
+.Page.Main .Buildings .Building[data-building="1401-spruce"] .Photo {
+  background-image: url('../img/Building2.jpg')
+}
+.Page.Main .Buildings .Building[data-building="rittenhouse-hill"] .Photo {
+  background-image: url('../img/Building3.jpg')
+}
+.Page.Main .Buildings .Building[data-building="delmar-morris"] .Photo {
+  background-image: url('../img/Building4.jpg')
+}
+.Page.Main .Buildings .Building[data-building="pastorius-court"] .Photo {
+  background-image: url('../img/Building5.jpg?2')
+}
+.Page.Main .Buildings .Building[data-building="presidential-city"] .Photo {
+  background-image: url('../img/Building6b.jpg')
+}
+.Page.Main .Buildings .Building[data-building="the-vermont"] .Photo {
+  background-image: url('../img/Building7.jpg?2')
+}
+.Page.Main .Buildings .Building[data-building="roosevelt"] .Photo {
+  background-image: url('../img/Building8.jpg')
+}
+.Page.Main .Buildings .Building[data-building="garden-court"] .Photo {
+  background-image: url('../img/Building9.jpg')
+}
+.Page.Main .Buildings .Building:hover:not(.off) .PhotoContainer .Photo {
+  width: 104%;
+  height: 104%;
+  top: -2%;
+  left: -2%;
+}
+
+.Page.Main .Section.Map {
+  display: block;
+  width: 100%;
+  height: 550px;
+  position: relative;
+  margin: 100px 0 0;
+}
+.Page.Main .Section.Map .MapContent {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+
+/*
+
+BUILDINGS
+
+*/
+
+body.buildings #Background {
+  display: none;
+}
+
+.Page.Building .FloorplanOverlay {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.Page.Building .FloorplanOverlay.show {
+  display: block;
+}
+.Page.Building .FloorplanOverlay .Mask {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.Page.Building .FloorplanOverlay .Box {
+  display: none;
+  width: 1200px;
+  height: 700px;
+  background: #fff;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -350px;
+  margin-left: -600px;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1240px) {
+  .Page.Building .FloorplanOverlay .Box {
+    width: 1000px;
+    margin-left: -500px;
+  }
+}
+@media screen and (max-width: 1040px) {
+  .Page.Building .FloorplanOverlay .Box {
+    width: 800px;
+    margin-left: -400px;
+  }
+}
+
+@media screen and (max-height: 760px) {
+  .Page.Building .FloorplanOverlay .Box {
+    height: 600px;
+    margin-top: -300px;
+  }
+}
+@media screen and (max-height: 660px) {
+  .Page.Building .FloorplanOverlay .Box {
+    height: 500px;
+    margin-top: -250px;
+  }
+}
+
+
+.Page.Building .FloorplanOverlay .Box.show {
+  display: block;
+}
+.Page.Building .FloorplanOverlay .Box .Header {
+  width: 100%;
+  height: 75px;
+  background-color: #383838;
+  position: absolute;
+  top: 0;
+}
+.Page.Building .FloorplanOverlay .Box .Header .Title {
+  line-height: 75px;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 24px;
+  color: #fff;
+  float: left;
+  padding-left: 30px;
+  padding-right: 50px;
+}
+.Page.Building .FloorplanOverlay .Box .Header .Parametr {
+  line-height: 75px;
+  font-family: 'HelveticaNeueLTPro-Roman', Arial;
+  font-size: 13px;
+  color: #fff;
+  float: left;
+  padding-right: 50px;
+}
+.Page.Building .FloorplanOverlay .Box .Header .Prev,
+.Page.Building .FloorplanOverlay .Box .Header .Next {
+  line-height: 75px;
+  font-family: 'HelveticaNeueLTPro-Roman', Arial;
+  font-size: 13px;
+  color: #fff;
+  text-decoration: underline;
+  float: right;
+  padding: 0 10px;
+}
+.Page.Building .FloorplanOverlay .Box .Header .Close {
+  line-height: 75px;
+  padding: 0 30px;
+  float: right;
+}
+
+.Page.Building .FloorplanOverlay .Box .Rent {
+  width: 100%;
+  height: 75px;
+  background-color: #e8d46d;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+.Page.Building .FloorplanOverlay .Box .Rent a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 75px;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 24px;
+  text-decoration: none;
+  color: #000;
+}
+
+.Page.Building .FloorplanOverlay .Box .Pics {
+  height: 100%;
+  padding: 115px 50px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.Page.Building .FloorplanOverlay .Box .Pics .Photos {
+  height: 100%
+}
+.Page.Building .FloorplanOverlay .Box .Pics .Photo {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.Page.Building .FloorplanOverlay .Box .Pics .Photo.active {
+  display: block;
+}
+
+.Page.Building .FloorplanOverlay .Box .Pics .Nav {
+  display: block;
+  width: 500px;
+  height: 14px;
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  margin-left: -250px;
+  text-align: center;
+}
+.Page.Building .FloorplanOverlay .Box .Pics .Nav a {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: #d5d6d9;
+  -webkit-border-radius: 99px;
+  -moz-border-radius: 99px;
+  border-radius: 99px;
+  margin: 0 5px;
+}
+.Page.Building .FloorplanOverlay .Box .Pics .Nav a.active {
+  background: #e9d762;
+}
+
+
+
+
+.Page.Building .Section.Start {
+  display: block;
+  width: 100%;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.SliderGallery .NavArrow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.SliderGallery .NavArrow .Container {
+  height: 100%;
+}
+.SliderGallery .NavArrow .Prev,
+.SliderGallery .NavArrow .Next {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+}
+.SliderGallery .NavArrow .Prev .Arrow,
+.SliderGallery .NavArrow .Next .Arrow {
+  display: block;
+  width: 100px;
+  height: 100%;
+  position: absolute;
+}
+.Section.Start.SliderGallery .NavArrow .Prev .Arrow {
+  width: 100%;
+}
+.Section.Start.SliderGallery .NavArrow .Next .Arrow {
+  width: 100%;
+}
+
+
+.Section.Start.SliderGallery .NavArrow .Prev .Arrow {
+  right: 100%;
+  margin-right: -60px;
+  left: initial;
+}
+.Section.Start.SliderGallery .NavArrow .Next .Arrow {
+  left: 100%;
+  margin-left: -60px;
+}
+
+
+.SliderGallery .NavArrow .Prev .Arrow {
+  left: 0;
+}
+.SliderGallery .NavArrow .Next .Arrow {
+  right: 0;
+}
+.SliderGallery .NavArrow .Prev:hover .Arrow,
+.SliderGallery .NavArrow .Next:hover .Arrow {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.SliderGallery .NavArrow .Prev svg,
+.SliderGallery .NavArrow .Next svg {
+  opacity: 0;
+}
+.SliderGallery .NavArrow .Prev:hover svg,
+.SliderGallery .NavArrow .Next:hover svg {
+  opacity: 1;
+}
+.SliderGallery .NavArrow .Prev {
+  left: 0;
+}
+.Section.Start.SliderGallery .NavArrow .Prev svg {
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  right: 100px;
+}
+.SliderGallery .NavArrow .Prev svg {
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  right: 30px;
+}
+.SliderGallery .NavArrow .Next {
+  right: 0;
+}
+.Section.Start.SliderGallery .NavArrow .Next svg {
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  left: 100px;
+}
+.SliderGallery .NavArrow .Next svg {
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  left: 30px;
+}
+
+
+.Page.Building .Section.Start .Nav {
+  display: block;
+  width: 500px;
+  height: 14px;
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  margin-left: -250px;
+  text-align: center;
+  z-index: 1;
+}
+.Page.Building .Section.Start .Nav a {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: #fff;
+  -webkit-border-radius: 99px;
+  -moz-border-radius: 99px;
+  border-radius: 99px;
+  margin: 0 5px;
+}
+.Page.Building .Section.Start .Nav a.active {
+  background: #e9d762;
+}
+.Page.Building .Section.Start .Photo {
+  width: 100%;
+  height: 100%;
+  background-position: bottom center;
+  background-size: cover !important;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s;
+  -moz-transition: opacity 0.35s;
+  -o-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+.Page.Building .Section.Start .Photo.active {
+  opacity: 1;
+}
+
+.Page.Building .Section.Description {
+  background: #f1f1f1;
+  padding-bottom: 90px;
+}
+.Page.Building .Section.Description .Container {
+  padding-top: 50px;
+}
+.Page.Building .Section.Description .Mask {
+  display: block;
+  width: 100%;
+  height: 60px;
+  background-color: #f1f1f1;
+  position: absolute;
+  top: -60px;
+  left: -40px;
+  padding: 0 40px;
+}
+.Page.Building .Section.Description .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 48px;
+  line-height: 58px;
+  color: #000;
+}
+.Page.Building .Section.Description .Website {
+  font-family: 'HelveticaNeueLTPro-Roman', Arial;
+  font-size: 12px;
+  color: #000;
+  margin-top: 10px;
+}
+.Page.Building .Section.Description .Website a {
+  text-decoration: underline;
+  color: #000;
+}
+.Page.Building .Section.Description .Text {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+  line-height: 20px;
+  color: #000;
+}
+.Page.Building .Section.Description .Text p {
+  line-height: 20px;
+}
+
+
+
+.Page.Building .Section.Filter {
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 9;
+}
+.Page.Building .Filter .Handle {
+  border: none;
+}
+.Page.Building .Filter .Handle a {
+  background: rgba(255, 255, 255, 0.17);
+  border: none;
+}
+.Page.Building .Filter .Handle a:nth-child(2n+1) {
+  background: rgba(255, 255, 255, 0.4)
+}
+
+.Page.Building .Apartment {
+  display: none;
+  width: 25%;
+  height: 250px;
+  background: #e9d762;
+  color: #000;
+  padding: 40px 30px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  float: left;
+  position: relative;
+  cursor: pointer;
+}
+.Page.Building .Apartment.Blank {
+  padding: 0;
+}
+.Page.Building .Apartment.Blank .Line {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/ApartmentBlank.png');
+  background-size: 100% 100%;
+  cursor: default;
+}
+
+.Page.Building .Apartments .Apartment:nth-child(2n+2) {
+  background: #eddd6e;
+}
+.Page.Building .Apartment.invert {
+  background: #eddd6e !important;
+}
+.Page.Building .Apartment.invert:nth-child(2n+2) {
+  background: #e9d762 !important;
+}
+
+.Page.Building .Apartments .Apartment:nth-child(1),
+.Page.Building .Apartments .Apartment:nth-child(2),
+.Page.Building .Apartments .Apartment:nth-child(3),
+.Page.Building .Apartments .Apartment:nth-child(4) {
+  display: block;
+}
+.Page.Building .Apartments.showAll .Apartment {
+  display: block;
+}
+.Page.Building .Apartment .Name {
+  display: block;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  /*    font-size: 24px;*/
+  font-size: 19px;
+  line-height: 28px;
+  padding-right: 80px;
+}
+.Page.Building .Apartment .Name small {
+  display: block;
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 11px;
+}
+.Page.Building .Apartment .RentNow {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 11px;
+  color: #000;
+  text-decoration: underline;
+  position: absolute;
+  top: 44px;
+  right: 30px;
+  z-index: 1;
+  text-align: right;
+}
+.Page.Building .Apartment .RentNow:hover {
+  font-family: 'HelveticaNeueLTPro-Md';
+}
+.Page.Building .Apartment .Floorplan {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 13px;
+  color: #000;
+  text-decoration: none;
+  position: absolute;
+  bottom: 40px;
+  left: 30px;
+  z-index: 1;
+}
+.Page.Building .Apartment:hover .Floorplan {
+  text-decoration: underline;
+}
+.Page.Building .Apartment .Data {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 11px;
+}
+.Page.Building .Apartment .Data .TableCell {
+  padding-top: 40px;
+}
+.Page.Building .Apartment .Data .Cl {
+  padding: 0 30px;
+}
+
+.Page.Building .Apartments .ShowMore {
+  display: block;
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 11px;
+  color: #000;
+  text-align: center;
+  background: #f8f8f8;
+}
+.Page.Building .Apartments.showAll .ShowMore {
+  display: none;
+}
+
+
+
+.Page.Building .Section.Brochure {
+  padding-bottom: 165px;
+}
+.Page.Building .Section.Brochure .Slider {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.Page.Building .Section.Brochure .Slider .TabsArrow {
+  position: absolute;
+  bottom: -20px;
+  left: 30px;
+  z-index: 1;
+}
+.Page.Building .Section.Brochure .Slider .TabsArrow a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  background: rgba(0, 0, 0, 0.1);
+  margin-right: 10px;
+  text-align: center;
+}
+.Page.Building .Section.Brochure .Slider .TabsArrow a svg {
+  position: relative;
+  top: 3px;
+}
+.Page.Building .Section.Brochure .Slider .TabsArrow a:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+.Page.Building .Section.Brochure .Slider .TabsNav .Tab {
+  width: 25%;
+  height: 80px;
+  line-height: 80px;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 14px;
+  color: #000;
+  background: #f1f1f1;
+  float: left;
+  padding: 0 30px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  cursor: pointer;
+}
+.Page.Building .Section.Brochure .Slider .TabsNav .Tab:nth-child(2n+2) {
+  background: #e8e8e8;
+}
+.Page.Building .Section.Brochure .Slider .TabsNav .Tab:hover,
+.Page.Building .Section.Brochure .Slider .TabsNav .Tab.active {
+  background: #e9d762;
+}
+
+
+.Page.Building .Section.Brochure .Slider .TabsPhoto .Tab {
+  display: none;
+  position: relative;
+}
+.Page.Building .Section.Brochure .Slider .TabsPhoto .Tab .Photos {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  background: url(../img/LoaderAjax.gif) center center no-repeat #d5d5d5;
+}
+.Page.Building .Section.Brochure .Slider .TabsPhoto .Tab .Photo {
+  width: 100%;
+  height: 500px;
+  background-position: bottom center;
+  background-size: cover !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s;
+  -moz-transition: opacity 0.35s;
+  -o-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+.Page.Building .Section.Brochure .Slider .TabsPhoto .Tab .Photo.active {
+  opacity: 1;
+}
+.Page.Building .Section.Brochure .Slider .TabsPhoto .Nav {
+  display: block;
+  width: 500px;
+  height: 14px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  z-index: 1;
+  margin-left: -250px;
+  text-align: center;
+}
+.Page.Building .Section.Brochure .Slider .TabsPhoto .Nav a {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: #fff;
+  -webkit-border-radius: 99px;
+  -moz-border-radius: 99px;
+  border-radius: 99px;
+  margin: 0 5px;
+}
+.Page.Building .Section.Brochure .Slider .TabsPhoto .Nav a.active {
+  background: #e9d762;
+}
+
+
+
+
+
+.Page.Building .Section.Brochure .Slider .TabsPhoto .Tab.active {
+  display: block;
+}
+
+
+.Page.Building .Section.Brochure .Slider .TabsContent {
+  position: relative;
+}
+.Page.Building .Section.Brochure .Slider .TabsContent .Tab {
+  display: none;
+}
+.Page.Building .Section.Brochure .Slider .TabsContent .Tab.active {
+  display: block;
+}
+
+.Page.Building .Section.Brochure .Slider .TabsContent .Tab .Mask {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #e9d762;
+  padding: 260px 40px 0;
+  position: absolute;
+  left: -40px;
+  top: -190px;
+  z-index: -1;
+}
+.Page.Building .Section.Brochure .Slider .TabsContent .Tab .Content {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+  line-height: 18px;
+  padding-top: 70px;
+  padding-bottom: 20px;
+}
+.Page.Building .Section.Brochure .Slider .TabsContent .Tab .Content .Cl {
+  padding: 0 30px;
+}
+.Page.Building .Section.Brochure .Slider .TabsContent .Tab .Content .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 27px;
+  line-height: 37px;
+  color: #000;
+}
+.Page.Building .Section.Brochure .Slider .TabsContent .Tab .Content p strong,
+.Page.Building .Section.Brochure .Slider .TabsContent .Tab .Content p b {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 15px;
+  line-height: 20px;
+}
+.Page.Building .Section.Brochure .Slider .TabsContent .Tab .Content p {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+.Page.Building .Section.Amenities {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+  line-height: 18px;
+
+  margin-bottom: 100px;
+  overflow: hidden;
+}
+.Page.Building .Section.Amenities .Container {
+  display: table;
+}
+.Page.Building .Section.Amenities p {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 20px;
+}
+.Page.Building .Section.Amenities .H330 {
+  height: 330px;
+}
+.Page.Building .Section.Amenities .Cl {
+  background: #e8e8e8;
+}
+.Page.Building .Section.Amenities .Photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s;
+  -moz-transition: opacity 0.35s;
+  -o-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+.Page.Building .Section.Amenities .Photo.active {
+  opacity: 1;
+}
+.Page.Building .Section.Amenities .Nav {
+  display: block;
+  width: 500px;
+  height: 14px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -250px;
+  text-align: center;
+}
+.Page.Building .Section.Amenities .Nav a {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: #fff;
+  -webkit-border-radius: 99px;
+  -moz-border-radius: 99px;
+  border-radius: 99px;
+  margin: 0 5px;
+}
+.Page.Building .Section.Amenities .Nav a.active {
+  background: #e9d762;
+}
+
+
+.Page.Building .Section.Amenities .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 21px;
+  line-height: 21px;
+  margin-bottom: 20px;
+}
+
+
+
+.Page.Building .Section.Floorplans {
+  height: 700px;
+  margin-bottom: 100px;
+}
+.Page.Building .Section.Floorplans .Nav {
+  display: block;
+  width: 45px;
+  height: 75px;
+  line-height: 80px;
+  background: #e4d467;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  margin-top: -35px;
+  z-index: 2;
+  cursor: pointer;
+}
+.Page.Building .Section.Floorplans .Nav:hover {
+  background: #cfc05a;
+}
+.Page.Building .Section.Floorplans .Nav.Prev {
+  left: -20px;
+}
+.Page.Building .Section.Floorplans .Nav.Next {
+  right: -20px;
+}
+.Page.Building .Section.Floorplans .Container {
+  height: 100%;
+  background: #fff;
+  position: relative;
+}
+.Page.Building .Section.Floorplans .Cut {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.Page.Building .Section.Floorplans .Items {
+  width: 300%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: left 0.35s;
+  -moz-transition: left 0.35s;
+  -o-transition: left 0.35s;
+  transition: left 0.35s;
+}
+.Page.Building .Section.Floorplans[data-slide="0"] .Items {
+  left: 0%;
+}
+.Page.Building .Section.Floorplans[data-slide="1"] .Items {
+  left: -100%;
+}
+.Page.Building .Section.Floorplans[data-slide="2"] .Items {
+  left: -200%;
+}
+.Page.Building .Section.Floorplans[data-slide="3"] .Items {
+  left: -300%;
+}
+.Page.Building .Section.Floorplans[data-slide="4"] .Items {
+  left: -400%;
+}
+.Page.Building .Section.Floorplans[data-slide="5"] .Items {
+  left: -500%;
+}
+.Page.Building .Section.Floorplans[data-slide="6"] .Items {
+  left: -600%;
+}
+.Page.Building .Section.Floorplans[data-slide="7"] .Items {
+  left: -700%;
+}
+.Page.Building .Section.Floorplans[data-slide="8"] .Items {
+  left: -800%;
+}
+.Page.Building .Section.Floorplans[data-slide="9"] .Items {
+  left: -900%;
+}
+.Page.Building .Section.Floorplans[data-slide="10"] .Items {
+  left: -1000%;
+}
+.Page.Building .Section.Floorplans[data-slide="11"] .Items {
+  left: -1100%;
+}
+.Page.Building .Section.Floorplans[data-slide="12"] .Items {
+  left: -1200%;
+}
+.Page.Building .Section.Floorplans[data-slide="13"] .Items {
+  left: -1300%;
+}
+.Page.Building .Section.Floorplans[data-slide="14"] .Items {
+  left: -1400%;
+}
+.Page.Building .Section.Floorplans[data-slide="15"] .Items {
+  left: -1500%;
+}
+.Page.Building .Section.Floorplans[data-slide="16"] .Items {
+  left: -1600%;
+}
+.Page.Building .Section.Floorplans[data-slide="17"] .Items {
+  left: -1700%;
+}
+.Page.Building .Section.Floorplans[data-slide="18"] .Items {
+  left: -1800%;
+}
+.Page.Building .Section.Floorplans[data-slide="19"] .Items {
+  left: -1900%;
+}
+.Page.Building .Section.Floorplans[data-slide="20"] .Items {
+  left: -2000%;
+}
+.Page.Building .Section.Floorplans[data-slide="21"] .Items {
+  left: -2100%;
+}
+.Page.Building .Section.Floorplans[data-slide="22"] .Items {
+  left: -2200%;
+}
+.Page.Building .Section.Floorplans[data-slide="23"] .Items {
+  left: -2300%;
+}
+.Page.Building .Section.Floorplans[data-slide="24"] .Items {
+  left: -2400%;
+}
+.Page.Building .Section.Floorplans .Floorplan {
+  width: 33.333%;
+  height: 100%;
+  padding: 160px 30px 40px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: relative;
+  float: left;
+}
+.Page.Building .Section.Floorplans .Floorplan .Header {
+  width: 100%;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  text-align: center;
+}
+.Page.Building .Section.Floorplans .Floorplan .Header .Size1 {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+}
+.Page.Building .Section.Floorplans .Floorplan .Header .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 24px;
+  margin: 5px 0 10px;
+}
+.Page.Building .Section.Floorplans .Floorplan .Download {
+  width: 100%;
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  text-align: center;
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 11px;
+  text-decoration: underline;
+}
+.Page.Building .Section.Floorplans .Floorplan .Pic {
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+.Page.Building .Section.Eco {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 100px;
+}
+.Page.Building .Section.Eco p.Big {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 15px;
+  line-height: 20px;
+}
+.Page.Building .Section.Eco p {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+.Page.Building .Section.Map {
+  display: block;
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+.Page.Building .Section.Map .MapContent {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+
+
+
+
+
+
+/*
+
+ABOUT
+
+*/
+
+body.about-company #Background {
+  display: none;
+}
+
+.Page.About .Section.Start {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding-bottom: 38%;
+}
+.Page.About .Section.Start .Photo {
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover !important;
+  position: absolute;
+}
+.Page.About .Section.Start .Container {
+  height: 100%;
+}
+.Page.About .Section.Start .Inside {
+  width: 1200px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  padding: 0 30px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.Page.About .Section.Start .Inside .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 29px;
+  line-height: 39px;
+  color: #ead33a;
+  margin-right: 110px;
+  float: left;
+}
+.Page.About .Section.Start .Inside .Text {
+  width: 360px;
+  font-family: 'HelveticaNeueLTPro-Md';
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  color: #fff;
+  float: left;
+}
+
+.Page.About .Section.StartPhone {
+  display: none;
+}
+
+
+
+.Page.About .Section.History {
+  display: block;
+  width: 100%;
+  position: relative;
+  background: #e9d762;
+  padding: 130px 0 200px;
+}
+.Page.About .Section.History .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 31px;
+  color: #000;
+}
+.Page.About .Section.History p {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+  line-height: 22px;
+  margin-bottom: 20px;
+}
+
+
+
+.Page.About .Section.Team {
+  display: block;
+  width: 100%;
+  position: relative;
+  background: #f1f1f1;
+}
+.Page.About .Section.Team .Container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.Page.About .Section.Team .Mask.Top {
+  display: block;
+  width: 100%;
+  height: 60px;
+  background-color: #f1f1f1;
+  position: absolute;
+  top: -60px;
+  left: -40px;
+  padding: 0 40px;
+}
+.Page.About .Section.Team .Mask.Bottom {
+  display: block;
+  width: 100%;
+  height: 60px;
+  background-color: #f1f1f1;
+  position: absolute;
+  bottom: -60px;
+  left: -40px;
+  padding: 0 40px;
+}
+.Page.About .Section.Team .Header {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 31px;
+  text-align: center;
+  line-height: 41px;
+  margin-bottom: 110px;
+}
+.Page.About .Section.Team .Person {
+  display: block;
+  width: 50%;
+  float: left;
+}
+.Page.About .Section.Team .Persons .Row {
+  display: none;
+}
+.Page.About .Section.Team .Persons .Row:nth-child(1),
+.Page.About .Section.Team .Persons .Row:nth-child(2) {
+  display: block;
+}
+.Page.About .Section.Team .Persons.showAll .Row {
+  display: block;
+}
+
+
+
+.Page.About .Section.Team .Person .Cl.Cl1-8 {
+  width: 20%;
+}
+.Page.About .Section.Team .Person .Cl.Cl3-8 {
+  width: 80%;
+}
+.Page.About .Section.Team .Person {
+  margin-bottom: 70px;
+}
+.Page.About .Section.Team .Person .Photo {
+  display: block;
+  width: 110px;
+  height: 110px;
+  -webkit-border-radius: 300px;
+  -moz-border-radius: 300px;
+  border-radius: 300px;
+  background-color: gray;
+  background-size: cover;
+  background-position: top center;
+  margin: 0 auto;
+}
+.Page.About .Section.Team .Person[data-person="MichaelPestronk"] .Photo {
+  background-image: url('../assets/about/TeamMichaelPestronk.jpg');
+}
+.Page.About .Section.Team .Person[data-person="MatthewPestronk"] .Photo {
+  background-image: url('../assets/about/TeamMatthewPestronk.jpg');
+}
+.Page.About .Section.Team .Person[data-person="JonathanRobinson"] .Photo {
+  background-image: url('../assets/about/TeamJonathanRobinson.jpg');
+}
+.Page.About .Section.Team .Person[data-person="RyanMcCaffrey"] .Photo {
+  background-image: url('../assets/about/TeamRyanMcCaffrey.jpg');
+}
+.Page.About .Section.Team .Person[data-person="YvetteStewart"] .Photo {
+  background-image: url('../assets/about/TeamYvetteStewart.jpg');
+}
+.Page.About .Section.Team .Person[data-person="SarinaRose"] .Photo {
+  background-image: url('../assets/about/TeamSarinaRose.jpg');
+}
+.Page.About .Section.Team .Person[data-person="AlexanderSharpan"] .Photo {
+  background-image: url('../assets/about/TeamAlexanderSharpan.jpg');
+}
+.Page.About .Section.Team .Person[data-person="RandolphHope"] .Photo {
+  background-image: url('../assets/about/TeamRandolphHope.jpg');
+}
+.Page.About .Section.Team .Person .Name {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 30px;
+  line-height: 40px;
+  margin-bottom: 10px;
+}
+.Page.About .Section.Team .Person .Position {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 20px;
+}
+.Page.About .Section.Team .Person .Text {
+  height: 176px;
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+  line-height: 22px;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+.Page.About .Section.Team .Person.show .Text {
+  height: auto;
+}
+.Page.About .Section.Team .Person .ReadMore {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+  line-height: 18px;
+}
+.Page.About .Section.Team .Person .ReadMore .Txt {
+  float: left;
+}
+.Page.About .Section.Team .Person .ReadMore .Arrow {
+  display: block;
+  margin-left: 15px;
+  position: relative;
+  top: -2px;
+  float: left;
+}
+.Page.About .Section.Team .Person.show .ReadMore .Arrow {
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.Page.About .Section.Team .ShowMore {
+  display: block;
+  width: 185px;
+  height: 65px;
+  background: #1c1c1c;
+  color: #fff;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 16px;
+  text-align: center;
+  line-height: 65px;
+  margin: 50px auto;
+}
+.Page.About .Section.Team .Persons.showAll .ShowMore {
+  display: none;
+}
+
+
+.Page.About .Section.Investors {
+  display: block;
+  width: 100%;
+  position: relative;
+  background: url('../assets/about/Background2.jpg') top center no-repeat;
+  background-size: cover;
+  padding: 200px 0 130px;
+}
+.Page.About .Section.Investors .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 31px;
+  color: #fff;
+}
+.Page.About .Section.Investors .Cl,
+.Page.About .Section.Investors p {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+  line-height: 22px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+
+
+
+.Page.About .Section.Careers {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding: 100px 0 100px;
+  background: #eaeaea;
+}
+.Page.About .Section.Careers .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 31px;
+}
+.Page.About .Section.Careers p,
+.Page.About .Section.Careers a {
+  line-height: 22px;
+  margin-bottom: 10px;
+}
+.Page.About .Section.Careers .Pos {
+  display: block;
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+  text-decoration: none;
+}
+.Page.About .Section.Careers .Popup {
+  display: none;
+  width: 75%;
+  position: absolute;
+  top: 0;
+  left: 25%;
+}
+.Page.About .Section.Careers .Popup .Box {
+  background: #fff;
+  padding: 30px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  height: 220px;
+  width: 100%;
+}
+.Page.About .Section.Careers .Popup .Title {
+  line-height: 40px;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.Page.About .Section.Careers .Popup .Text {
+  width: 90%;
+  font-family: 'HelveticaNeueLTPro-Roman', Arial;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  margin: 0 auto;
+}
+.Page.About .Section.Careers .Popup .Close {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 30px;
+}
+.Page.About .Section.Careers .Popup .BtContact {
+  display: block;
+  width: 100px;
+  background: #dfd469;
+  color: #000;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 16px;
+  text-align: center;
+  line-height: 40px;
+  margin: 20px auto 0;
+  text-decoration: none;
+}
+
+
+
+
+/*
+
+CORPORATE HOUSING
+
+*/
+
+body.corporate-housing #Background {
+  display: none;
+}
+.Page.CorporateHousing .Section.Start {
+  display: block;
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+.Page.CorporateHousing .Section.Start .Photo {
+  width: 100%;
+  height: 100%;
+  background-position: top center;
+  background-size: cover !important;
+  position: absolute;
+}
+.Page.CorporateHousing .Section.Start .Container {
+  height: 100%;
+}
+.Page.CorporateHousing .Section.Start .Inside {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 30px;
+}
+.Page.CorporateHousing .Section.Start .Inside .TableCell {
+  padding: 75px 0 0;
+}
+.Page.CorporateHousing .Section.Start .Inside .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 42px;
+  line-height: 42px;
+  margin-bottom: 40px;
+  color: #ead33a;
+}
+.Page.CorporateHousing .Section.Start .Inside .Text {
+  width: 640px;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 22px;
+  line-height: 30px;
+  color: #fff;
+}
+
+
+.Page.CorporateHousing .Section.Description {
+  background: #f1f1f1;
+  padding-bottom: 90px;
+}
+.Page.CorporateHousing .Section.Description .Container {
+  padding-top: 50px;
+}
+.Page.CorporateHousing .Section.Description .Mask {
+  display: block;
+  width: 100%;
+  height: 60px;
+  background-color: #f1f1f1;
+  position: absolute;
+  top: -60px;
+  left: -40px;
+  padding: 0 40px;
+}
+.Page.CorporateHousing .Section.Description .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 48px;
+  line-height: 58px;
+  color: #000;
+}
+.Page.CorporateHousing .Section.Description .Website {
+  font-family: 'HelveticaNeueLTPro-Roman', Arial;
+  font-size: 12px;
+  color: #000;
+  margin-top: 10px;
+}
+.Page.CorporateHousing .Section.Description .Website a {
+  text-decoration: underline;
+  color: #000;
+}
+.Page.CorporateHousing .Section.Description .Text {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+  line-height: 20px;
+  color: #000;
+}
+.Page.CorporateHousing .Section.Description .Text p {
+  line-height: 20px;
+}
+
+
+
+.Page.CorporateHousing .Section.Brochure {
+  padding-bottom: 165px;
+}
+.Page.CorporateHousing .Section.Brochure .Slider {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.Page.CorporateHousing .Section.Brochure .Slider .TabsArrow {
+  position: absolute;
+  bottom: -20px;
+  left: 30px;
+  z-index: 1;
+}
+.Page.CorporateHousing .Section.Brochure .Slider .TabsArrow a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  background: rgba(0, 0, 0, 0.1);
+  margin-right: 10px;
+  text-align: center;
+}
+.Page.CorporateHousing .Section.Brochure .Slider .TabsArrow a svg {
+  position: relative;
+  top: 3px;
+}
+.Page.CorporateHousing .Section.Brochure .Slider .TabsArrow a:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+.Page.CorporateHousing .Section.Brochure .Slider .TabsNav .Tab {
+  width: 25%;
+  height: 80px;
+  line-height: 80px;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 14px;
+  color: #000;
+  background: #f1f1f1;
+  float: left;
+  padding: 0 30px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  cursor: pointer;
+}
+.Page.CorporateHousing .Section.Brochure .Slider .TabsNav .Tab:nth-child(2n+2) {
+  background: #e8e8e8;
+}
+.Page.CorporateHousing .Section.Brochure .Slider .TabsNav .Tab:hover,
+.Page.CorporateHousing .Section.Brochure .Slider .TabsNav .Tab.active {
+  background: #e9d762;
+}
+.Page.CorporateHousing .Section.Brochure .Slider .TabsPhoto .Tab .Photos {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  background: url(../img/LoaderAjax.gif) center center no-repeat #d5d5d5;
+}
+.Page.CorporateHousing .Section.Brochure .Slider .TabsPhoto .Tab {
+  display: none;
+  position: relative;
+}
+.Page.CorporateHousing .Section.Brochure .Slider .TabsPhoto .Tab .Photo {
+  width: 100%;
+  height: 500px;
+  background-position: bottom center;
+  background-size: cover !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
+.Page.CorporateHousing .Section.Brochure .Slider .TabsPhoto .Tab.active {
+  display: block;
+}
+
+.Page.CorporateHousing .Section.Brochure .Slider .TabsContent {
+  position: relative;
+}
+.Page.CorporateHousing .Section.Brochure .Slider .TabsContent .Tab {
+  height: auto;
+}
+.Page.CorporateHousing .Section.Brochure .Slider .TabsContent .Tab .Mask {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #e9d762;
+  padding: 260px 40px 0;
+  position: absolute;
+  left: -40px;
+  top: -190px;
+  z-index: -1;
+}
+.Page.CorporateHousing .Section.Brochure .Slider .TabsContent .Tab .Content {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+  line-height: 18px;
+  padding-top: 70px;
+  padding-bottom: 20px;
+}
+.Page.CorporateHousing .Section.Brochure .Slider .TabsContent .Tab .Content .Cl {
+  padding: 0 30px;
+}
+.Page.CorporateHousing .Section.Brochure .Slider .TabsContent .Tab .Content .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 22px;
+  line-height: 32px;
+  color: #000;
+}
+.Page.CorporateHousing .Section.Brochure .Slider .TabsContent .Tab .Content p strong,
+.Page.CorporateHousing .Section.Brochure .Slider .TabsContent .Tab .Content p b {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 15px;
+  line-height: 20px;
+}
+.Page.CorporateHousing .Section.Brochure .Slider .TabsContent .Tab .Content p {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 20px;
+}
+
+
+
+.Page.CorporateHousing .Section.Description2 {}
+.Page.CorporateHousing .Section.Description2 .Photo {
+  width: 100%;
+  height: 500px;
+  background-position: bottom center;
+  background-size: cover !important;
+}
+.Page.CorporateHousing .Section.Description2 .Inside .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 22px;
+  line-height: 32px;
+  color: #000;
+  margin-bottom: 30px;
+}
+.Page.CorporateHousing .Section.Description2 .Inside p {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 5px;
+}
+.Page.CorporateHousing .Section.Description2 .Inside .Cl {
+  display: table-cell;
+  float: none;
+  padding: 120px 70px;
+}
+.Page.CorporateHousing .Section.Description2 .BackYellow {
+  background: #f2e06c;
+}
+.Page.CorporateHousing .Section.Description2 .BackWhite {
+  background: #fff;
+}
+.Page.CorporateHousing .Section.Description2 .BackGray {
+  background: #f6f6f6;
+}
+
+
+
+
+
+
+/*
+
+Social Responsibilities
+
+*/
+
+body.social-responsibilities #Background {
+  display: none;
+}
+
+.Page.SocialResponsibilities .Section.Start {
+  display: block;
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+.Page.SocialResponsibilities .Section.Start .Photo {
+  width: 100%;
+  height: 100%;
+  background-position: bottom center;
+  background-size: cover !important;
+  position: absolute;
+}
+.Page.SocialResponsibilities .Section.Start .Container {
+  height: 100%;
+}
+.Page.SocialResponsibilities .Section.Start .Inside {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 30px;
+}
+.Page.SocialResponsibilities .Section.Start .Inside .TableCell {
+  padding: 75px 0 0;
+}
+.Page.SocialResponsibilities .Section.Start .Inside .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 42px;
+  line-height: 42px;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+
+
+.Page.SocialResponsibilities .Section.Content {
+  background: #f1f1f1;
+  padding-bottom: 90px;
+}
+.Page.SocialResponsibilities .Section.Content .Mask {
+  display: block;
+  width: 100%;
+  height: 60px;
+  background-color: #f1f1f1;
+  position: absolute;
+  top: -60px;
+  left: -40px;
+  padding: 0 40px;
+}
+.Page.SocialResponsibilities .Section.Content h1 {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 41px;
+  color: #44995c;
+  padding: 30px 30px 0 30px;
+  margin-bottom: 150px;
+}
+.Page.SocialResponsibilities .Section.Content h2 {
+  font-family: 'HelveticaNeueLTPro-Md';
+  letter-spacing: 1px;
+  font-size: 26px;
+  color: #44995c;
+}
+.Page.SocialResponsibilities .Section.Content hr {
+  width: 25px;
+  height: 3px;
+  background: #44995c;
+  border: none;
+  margin: 20px auto 0 0;
+}
+.Page.SocialResponsibilities .Section.Content .Text {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+  line-height: 22px;
+  margin-bottom: 20px;
+}
+.Page.SocialResponsibilities .Section.Content .Enter {
+  height: 100px;
+}
+
+.Page.SocialResponsibilities .Section.Footer {
+  background-position: bottom center;
+  background-size: cover !important;
+  position: relative;
+}
+.Page.SocialResponsibilities .Section.Footer .Mask {
+  display: block;
+  width: 100%;
+  height: 60px;
+  background-color: #f1f1f1;
+  position: absolute;
+  top: 0;
+  left: -40px;
+  padding: 0 40px;
+}
+.Page.SocialResponsibilities .Section.Footer .Inside {
+  padding: 230px 0 200px;
+}
+.Page.SocialResponsibilities .Section.Footer .Inside .Text {
+  width: 70%;
+  margin: 0 auto;
+}
+.Page.SocialResponsibilities .Section.Footer .Inside h2 {
+  display: block;
+  color: #e9d762;
+  margin-bottom: 40px;
+  font-size: 35px;
+  text-align: center;
+  font-family: 'HelveticaNeueLTPro-Md';
+  line-height: 22px;
+}
+.Page.SocialResponsibilities .Section.Footer .Inside p.Big {
+  color: #e9d762;
+  margin-bottom: 40px;
+  font-size: 18px;
+  text-align: center;
+  font-family: 'HelveticaNeueLTPro-Md';
+  line-height: 22px;
+  width: 100%;
+}
+.Page.SocialResponsibilities .Section.Footer .Inside p {
+  color: #e9d762;
+  margin-bottom: 40px;
+  font-size: 12px;
+  text-align: center;
+  font-family: 'HelveticaNeueLTPro-Md';
+  line-height: 19px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+
+/*
+
+CONTACT
+
+*/
+
+body.contact #Background {
+  display: none;
+}
+
+.Page.Contact .Section.Form {
+  display: block;
+  width: 100%;
+  position: relative;
+  background: #e5e5e5;
+  padding-bottom: 110px;
+}
+.Page.Contact h2 {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 23px;
+  margin: 40px 0 30px;
+}
+.Page.Contact .Section.Form .Breadcrumb {
+  background: #f1f1f1;
+  margin-bottom: 35px;
+}
+.Page.Contact label,
+.Page.Contact div.Label {
+  display: block;
+  margin-bottom: 20px;
+  position: relative;
+}
+.Page.Contact input[type="text"],
+.Page.Contact input[type="email"],
+.Page.Contact textarea {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #e9d762;
+  border: none;
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 13px;
+  color: #000;
+  padding: 0 20px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.Page.Contact textarea {
+  height: 150px;
+  resize: none;
+}
+
+.Page.Contact input[type="text"]:hover,
+.Page.Contact input[type="email"]:hover,
+.Page.Contact textarea:hover {
+  background: #000;
+  color: #fff;
+}
+.Page.Contact input:hover::-webkit-input-placeholder,
+.Page.Contact textarea:hover::-webkit-input-placeholder {
+  color: #fff;
+}
+.Page.Contact input:hover::-moz-placeholder,
+.Page.Contact textarea:hover::-moz-placeholder {
+  color: #fff;
+}
+.Page.Contact input:hover:-ms-input-placeholder,
+.Page.Contact textarea:hover:-ms-input-placeholder {
+  color: #fff;
+}
+
+
+
+.Page.Contact input::-webkit-input-placeholder,
+.Page.Contact textarea::-webkit-input-placeholder {
+  color: #000;
+}
+.Page.Contact input::-moz-placeholder,
+.Page.Contact textarea::-moz-placeholder {
+  color: #000;
+}
+.Page.Contact input:-ms-input-placeholder,
+.Page.Contact textarea:-ms-input-placeholder {
+  color: #000;
+}
+
+
+.Page.Contact input[type="text"].error,
+.Page.Contact input[type="email"].error,
+.Page.Contact textarea.error {
+  background: #9d3c25;
+  color: #fff;
+}
+.Page.Contact input.error::-webkit-input-placeholder,
+.Page.Contact textarea.error::-webkit-input-placeholder {
+  color: #fff;
+}
+.Page.Contact input.error::-moz-placeholder,
+.Page.Contact textarea.error::-moz-placeholder {
+  color: #fff;
+}
+.Page.Contact input.error:-ms-input-placeholder,
+.Page.Contact textarea.error:-ms-input-placeholder {
+  color: #fff;
+}
+
+
+.Page.Contact input[type="submit"] {
+  width: 120px;
+  height: 54px;
+  line-height: 54px;
+  background: #1c1c1c;
+  border: none;
+  font-family: 'HelveticaNeueLTPro-Md';
+  font-size: 14px;
+  color: #fff;
+  margin-right: 20px;
+  float: left;
+}
+.Page.Contact input[type="submit"]:hover {
+  background: #4c4c4c;
+}
+.Page.Contact .Score {
+  display: none;
+  line-height: 60px;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 14px;
+  float: left;
+}
+
+
+.Page.Contact .Select {
+  position: relative;
+}
+.Page.Contact .Select .SelectAct {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background: #e9d762;
+  border: none;
+  padding: 0 20px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.Page.Contact .Select .SelectAct:hover {
+  background: #000;
+}
+.Page.Contact .Select .SelectAct:hover .Value {
+  color: #fff;
+}
+.Page.Contact .Select .SelectAct,
+.Page.Contact .Select .SelectAct input {
+  cursor: pointer;
+}
+.Page.Contact .Select .SelectAct .Arrow {
+  display: block;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.Page.Contact .Select .Dropdown {
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background-color: #e9d762;
+}
+.Page.Contact .Select .Dropdown a {
+  display: block;
+  width: 50%;
+  line-height: 50px;
+  background-color: #e9d762;
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 13px;
+  color: #000;
+  padding: 0 20px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: relative;
+  z-index: 3;
+  float: left
+}
+
+/*.Page.Contact .Select .Dropdown a:nth-child(2n+1) { background-color: #dcca54; }*/
+
+.Page.Contact .Select .Dropdown a:hover {
+  background: #000;
+  color: #fff;
+}
+.Page.Contact .Select .Dropdown .Mask {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  z-index: 2;
+  width: 9999px;
+  height: 9999px;
+  cursor: pointer;
+}
+
+
+
+.Page.Contact .Validation {
+  display: none;
+  width: 500px;
+  height: 260px;
+  background: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 99;
+  margin: -130px 0 0 -250px;
+}
+.Page.Contact .Validation .Table {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+}
+.Page.Contact .Validation .Mask {
+  width: 9999px;
+  height: 99999px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: -2000px;
+  top: -2000px;
+  z-index: 1;
+  cursor: pointer;
+}
+.Page.Contact .Validation p {
+  font-family: 'HelveticaNeueLTPro-Md';
+  font-size: 23px;
+  line-height: 30px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+.Page.Contact .Validation .BtClose {
+  width: 120px;
+  height: 54px;
+  line-height: 54px;
+  background: #1c1c1c;
+  border: none;
+  font-family: 'HelveticaNeueLTPro-Md';
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #fff;
+  margin: 0 auto;
+  display: block;
+}
+.Page.Contact .Validation .BtClose:hover {
+  background: #4c4c4c;
+}
+
+
+
+.Page.Contact .Bt {
+  display: block;
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  background: #f1f1f1;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.Page.Contact .Bt:hover {
+  background: #fff;
+}
+.Page.Contact .Bt .Icon {
+  padding: 0 20px 0 35px;
+  float: left;
+}
+.Page.Contact .Bt .Icon svg {
+  position: relative;
+  top: 8px;
+}
+.Page.Contact .Bt .Text {
+  font-family: 'HelveticaNeueLTPro-Md';
+  font-size: 14px;
+  padding: 0 20px;
+  float: left;
+}
+
+.Page.Contact .RollContent .Address {
+  display: block;
+  width: 100%;
+  background: #f1f1f1;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 25px 40px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.Page.Contact .RollContent .Address .Title {
+  font-family: 'HelveticaNeueLTPro-Md';
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.Page.Contact .RollContent .Address .Text {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 13px;
+  line-height: 20px;
+  color: #1c1c1c;
+}
+.Page.Contact .RollContent .Address .Text p {
+  line-height: 20px;
+}
+.Page.Contact .RollContent .Address .Text a {
+  color: #1c1c1c;
+}
+
+
+.Page.Contact .Contacts {
+  display: block;
+  background: #f1f1f1;
+}
+.Page.Contact .Contacts .Line {
+  width: 12px;
+  height: 1px;
+  background-color: #a0a0a0;
+}
+.Page.Contact .Contacts .Line.Left {
+  margin: 0 auto 0 30px;
+}
+.Page.Contact .Contacts .Line.Right {
+  margin: 0 30px 0 auto;
+}
+.Page.Contact .Contacts .Contact {
+  padding: 50px 30px 40px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.Page.Contact .Contacts .Contact:last-child {
+  padding: 50px 30px 50px;
+}
+.Page.Contact .Contacts .Contact .Title {
+  font-family: 'HelveticaNeueLTPro-Md';
+  font-size: 14px;
+  float: left;
+}
+.Page.Contact .Contacts .Contact .Text {
+  text-align: right;
+  float: right;
+}
+.Page.Contact .Contacts .Contact .Text .Number {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+.Page.Contact .Contacts .Contact .Text .Email {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 13px;
+  text-decoration: none;
+  color: #1c1c1c;
+}
+
+
+
+
+
+
+/*
+
+OUT PROPERTIES
+
+*/
+
+body.our-properties #Background {
+  display: none;
+}
+
+.Page.OurProperties .Breadcrumb {
+  background: #f1f1f1;
+}
+.Page.OurProperties .Section.Start {
+  display: block;
+  width: 100%;
+  height: 670px;
+  position: relative;
+}
+.Page.OurProperties .Section.Start .Photo {
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/our-properties/Background.jpg');
+  background-position: bottom center;
+  background-size: cover !important;
+  position: absolute;
+}
+.Page.OurProperties .Section.Start .Container {
+  height: 100%;
+}
+.Page.OurProperties .Section.Start .Inside {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 30px;
+}
+.Page.OurProperties .Section.Start .Inside .TableCell {
+  padding: 75px 0 240px;
+}
+.Page.OurProperties .Section.Start .Inside .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 42px;
+  line-height: 42px;
+  color: #000;
+  margin-bottom: 40px;
+}
+.Page.OurProperties .Section.Start .Inside .Text {
+  width: 640px;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 22px;
+  line-height: 30px;
+  color: #000;
+}
+
+
+.Page.OurProperties .Section.List {
+  margin-top: -222px;
+}
+
+
+.Page.OurProperties .Filter .Handle {
+  border: none;
+}
+.Page.OurProperties .Filter .Handle a {
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 28px 30px;
+}
+.Page.OurProperties .Filter .Handle a:nth-child(2n+1) {
+  background: rgba(255, 255, 255, 0.4)
+}
+
+.Page.OurProperties .Buildings .Building {
+  display: block;
+  width: 100%;
+  height: 370px;
+  position: relative;
+  background: #fff;
+
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  -o-transition: background 0.3s;
+  transition: background 0.3s;
+}
+.Page.OurProperties .Buildings .Building.coming-soon {
+  background: #f1f1f1 !important;
+}
+.Page.OurProperties .Buildings .Building.off,
+.Page.OurProperties .Buildings .Building.coming-soon {
+  cursor: default;
+}
+.Page.OurProperties .Buildings .Building:hover:not(.off) {
+  background: #e5d66e;
+}
+
+.Page.OurProperties .Buildings .Building.off {
+  cursor: default;
+}
+.Page.OurProperties .Buildings .Building:hover:not(.off) {
+  background: #e5d66e;
+}
+.Page.OurProperties .Buildings .Building.anim,
+.Page.OurProperties .Buildings .Building.off {
+  background: #e5d66e;
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  -o-transition: background 0.3s;
+  transition: background 0.3s;
+}
+.Page.OurProperties .Buildings .Building .Mask {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(150, 150, 150, 0.2);
+  position: absolute;
+  z-index: 2;
+}
+.Page.OurProperties .Buildings .Building.off .Mask {
+  display: block;
+}
+.Page.OurProperties .Buildings .Building .ClDesc {
+  float: left;
+}
+.Page.OurProperties .Buildings .Building.invert .ClDesc {
+  float: right;
+}
+.Page.OurProperties .Buildings .Building .ClPhoto {
+  float: right;
+}
+.Page.OurProperties .Buildings .Building.invert .ClPhoto {
+  float: left;
+}
+.Page.OurProperties .Buildings .Building:hover:not(.off) {
+  background: #e5d66e;
+}
+.Page.OurProperties .Buildings .Building .Change {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #dbdbda;
+  z-index: 0;
+  opacity: 0;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.Page.OurProperties .Buildings .Building.change .Change {
+  opacity: 1;
+}
+.Page.OurProperties .Buildings .Building .Address {
+  font-family: Georgia;
+  font-size: 13px;
+  line-height: 21px;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.Page.OurProperties .Buildings .Building .Address .ComingSoon {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+
+.Page.OurProperties .Buildings .Building .Name {
+  height: 100%;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 32px;
+  line-height: 40px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 0;
+  left: 30px;
+}
+.Page.OurProperties .Buildings .Building .Units {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 11px;
+  color: #000;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+.Page.OurProperties .Buildings .Building .Units .Count {
+  display: block;
+  width: 26px;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 16px;
+  color: #000;
+  padding-right: 10px;
+  text-align: center;
+  position: relative;
+  float: left;
+}
+.Page.OurProperties .Buildings .Building .Units .Count .Load {
+  display: none;
+  width: 26px;
+  height: 26px;
+  background: url('../img/LoaderUnit.gif');
+  position: absolute;
+  top: -3px;
+  left: -1px;
+}
+.Page.OurProperties .Buildings .Building .Units .Txt {
+  white-space: nowrap;
+  float: left;
+}
+
+.Page.OurProperties .Buildings .Building .PhotoContainer {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: gray;
+  position: relative;
+  overflow: hidden;
+}
+.Page.OurProperties .Buildings .Building .PhotoContainer .Apla {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.Page.OurProperties .Buildings .Building:hover:not(.off) .PhotoContainer .Apla {
+  background: rgba(0, 0, 0, 0);
+}
+.Page.OurProperties .Buildings .Building .PhotoContainer .Photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover !important;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.15s;
+  -moz-transition: all 0.15s;
+  -o-transition: all 0.15s;
+  transition: all 0.15s;
+}
+.Page.OurProperties .Buildings .Building:hover:not(.off) .PhotoContainer .Photo {
+  width: 104%;
+  height: 104%;
+  top: -2%;
+  left: -2%;
+}
+.Page.OurProperties .Buildings .Building .Description {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #e5d66e;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 30px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  color: #000;
+  text-decoration: none;
+  opacity: 0;
+}
+.Page.OurProperties .Buildings .Building .Description.show {
+  opacity: 1;
+}
+.Page.OurProperties .Buildings .Building .Description .Name {
+  position: static;
+  height: auto;
+  margin-bottom: 30px;
+}
+.Page.OurProperties .Buildings .Building .Description .Txt,
+.Page.OurProperties .Buildings .Building .Description .Txt p {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+
+.Page.OurProperties .Section.Map {
+  display: block;
+  width: 100%;
+  height: 550px;
+  position: relative;
+  margin: 100px 0 0;
+}
+.Page.OurProperties .Section.Map .MapContent {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+/*
+
+BLOG
+
+*/
+
+body.blog #Background {
+  display: none;
+}
+.Page.Blog .Section.Start {
+  display: block;
+  width: 100%;
+  height: 360px;
+  position: relative;
+}
+.Page.Blog .Section.Start .Photo {
+  width: 100%;
+  height: 100%;
+  background-position: bottom center;
+  background-size: cover !important;
+  position: absolute;
+}
+.Page.Blog .Section.Start .Photo {
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/our-properties/Background.jpg');
+  background-position: bottom center;
+  background-size: cover !important;
+  position: absolute;
+}
+.Page.Blog .Section.Start .Container {
+  height: 100%;
+}
+.Page.Blog .Section.Start .Inside {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 30px;
+}
+.Page.Blog .Section.Start .Inside .TableCell {
+  padding: 75px 0 60px;
+}
+.Page.Blog .Section.Start .Inside .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 42px;
+  line-height: 42px;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+.Page.Blog .Bt {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  background: #e1d26c;
+  border: none;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 13px;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 15px;
+}
+.Page.Blog .Bt:hover {
+  background: #dbcc69;
+}
+
+.Page.Blog .Section.List {
+  margin-top: -60px;
+}
+.Page.Blog .Post {
+  display: block;
+  padding: 30px;
+  background: #fff;
+  margin-bottom: 7px;
+}
+.Page.Blog .Post:hover {
+  background: #F7F6F6;
+}
+.Page.Blog .Post .Text {
+  width: 460px;
+  margin-right: 30px;
+}
+.Page.Blog .Post .Text .Date {
+  font-family: Georgia;
+  font-size: 12px;
+  font-style: italic;
+  margin-bottom: 50px;
+}
+.Page.Blog .Post .Text .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 25px;
+  line-height: 33px;
+  margin-bottom: 35px;
+}
+.Page.Blog .Post .Text .Excerpt {
+  font-family: 'HelveticaNeueLTPro-Roman', Arial;
+  font-size: 13px;
+  line-height: 20px;
+  margin-bottom: 35px;
+}
+.Page.Blog .Post .Text .Excerpt p {
+  line-height: 20px;
+}
+.Page.Blog .Post .Picture {
+  width: 650px;
+  height: 400px;
+  background-position: center center;
+  background-size: cover;
+  float: right;
+}
+
+
+
+.Page.Blog .Section.One {
+  margin-top: -285px;
+}
+.Page.Blog .PostOne {
+  padding: 30px;
+  background: #fff;
+}
+.Page.Blog .PostOne .Text {
+  width: 60%;
+}
+.Page.Blog .PostOne .Picture {
+  width: 100%;
+  height: 400px;
+  background-position: center center;
+  background-size: cover;
+  margin-bottom: 35px;
+}
+.Page.Blog .PostOne .Date {
+  font-family: Georgia;
+  font-size: 12px;
+  font-style: italic;
+  margin-bottom: 50px;
+}
+.Page.Blog .PostOne .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 25px;
+  line-height: 33px;
+  margin-bottom: 35px;
+}
+.Page.Blog .PostOne .Txt {
+  font-family: 'HelveticaNeueLTPro-Roman', Arial;
+  font-size: 13px;
+  line-height: 20px;
+  margin-bottom: 35px;
+}
+.Page.Blog .PostOne .Txt p {
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+.Page.Blog .PostOne .Txt a {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  text-decoration: underline;
+  color: #000;
+}
+
+.Page.Blog .PostOne .Comments {
+  margin-top: 60px;
+}
+.Page.Blog .PostOne .Comments ol {
+  padding: 0;
+  margin: 30px 0;
+}
+.Page.Blog .PostOne .Comments ol li {
+  font-family: 'HelveticaNeueLTPro-Roman', Arial;
+  font-size: 13px;
+  line-height: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 15px 0;
+}
+.Page.Blog .PostOne .Comments ol li:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.Page.Blog .PostOne .Comments ol li a {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  text-decoration: underline;
+  color: #000;
+}
+.Page.Blog .PostOne .comment-form-comment label {
+  display: block;
+  margin: 20px 0 10px;
+}
+.Page.Blog .PostOne .comment-form-comment textarea {
+  width: 100%;
+  height: 100px;
+  resize: none;
+  margin-bottom: 20px;
+  font-family: 'HelveticaNeueLTPro-Roman', Arial;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+
+
+
+
+
+/*
+
+Press
+
+*/
+
+body.blog #Background {
+  display: none;
+}
+
+.Page.Press .Section.Start {
+  display: block;
+  width: 100%;
+  height: 360px;
+  position: relative;
+}
+.Page.Press .Section.Start .Photo {
+  width: 100%;
+  height: 100%;
+  background-position: bottom center;
+  background-size: cover !important;
+  position: absolute;
+}
+.Page.Press .Section.Start .Photo {
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/blog/Background.jpg');
+  background-position: bottom center;
+  background-size: cover !important;
+  position: absolute;
+}
+.Page.Press .Section.Start .Container {
+  height: 100%;
+}
+.Page.Press .Section.Start .Inside {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 30px;
+}
+.Page.Press .Section.Start .Inside .TableCell {
+  padding: 75px 0 60px;
+}
+.Page.Press .Section.Start .Inside .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 42px;
+  line-height: 42px;
+  margin-bottom: 40px;
+  color: #fff;
+}
+.Page.Press .Section.List {
+  background: #fff;
+}
+.Page.Press .Bt {
+  display: inline-block;
+  width: 125px;
+  height: 50px;
+  line-height: 50px;
+  background: #e6e6e6;
+  border: none;
+  font-family: 'HelveticaNeueLTPro-Roman', Arial;
+  font-size: 13px;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.Page.Press .Post:hover .Bt {
+  background: #e9d762;
+}
+.Page.Press .Post {
+  display: block;
+  padding: 80px 0;
+  background: #fff;
+  border-bottom: 1px solid #d5d5d6;
+  cursor: pointer;
+  color: #000;
+  text-decoration: none;
+}
+.Page.Press .Post:last-child {
+  border-bottom: none;
+}
+.Page.Press .Post .Text {
+  width: 50%;
+  padding-right: 80px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.Page.Press .Post .Text .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 25px;
+  line-height: 33px;
+  margin-bottom: 15px;
+}
+.Page.Press .Post .Text .Date {
+  font-family: 'HelveticaNeueLTPro-Roman', Arial;
+  font-size: 14px;
+  margin-bottom: 50px;
+}
+.Page.Press .Post .Text .Excerpt {
+  font-family: 'HelveticaNeueLTPro-Roman', Arial;
+  font-size: 13px;
+  line-height: 20px;
+  margin-bottom: 35px;
+}
+.Page.Press .Post .Text .Excerpt p {
+  line-height: 20px;
+}
+.Page.Press .Post .Picture {
+  width: 50%;
+  height: 400px;
+  background-position: center center;
+  background-size: cover;
+  float: right;
+}
+
+.Page.Press .PostOverlay {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+body.overlay .Page.Press .PostOverlay {
+  display: block;
+  overflow: scroll;
+}
+.Page.Press .PostOverlay .Load {
+  position: relative;
+  z-index: 2;
+}
+.Page.Press .PostOverlay .Mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: rgba(0,0,0,.6);
+  cursor: pointer;
+}
+.Page.Press .PostOverlay .Mask:hover {
+  background: rgba(0,0,0,.65);
+}
+
+
+
+
+
+.PressOne {
+  padding: 115px 0;
+  position: relative;
+}
+.PressOne .Container {
+  z-index: 3;
+}
+body:not(.mac) .PressOne .Container {
+  left: 8px;
+}
+.PressOne .Picture {
+  width: 100%;
+  height: 500px;
+  background-position: center center;
+  background-size: cover;
+}
+.PressOne .Info {
+  width: 100%;
+  padding: 6% 24% 6% 12%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background: #f7f7f7;
+}
+.PressOne .Text {
+  width: 100%;
+  padding: 6% 24% 6% 12%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background: #fff;
+}
+.PressOne .Date {
+  font-family: 'HelveticaNeueLTPro-Roman', Arial;
+  font-size: 14px;
+  padding-bottom: 60px;
+}
+.PressOne .Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 45px;
+  line-height: 53px;
+  margin-bottom: 15px;
+}
+.PressOne .FirstParagraf {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 50px;
+}
+.PressOne .FirstParagraf a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.PressOne .Social .BtFb,
+.PressOne .Social .BtTwitter {
+  display: inline-block;
+  width: 100px;
+  height: 25px;
+  font-family: 'HelveticaNeueLTPro-Roman', Arial;
+  font-size: 12px;
+  line-height: 25px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.PressOne .Social .BtFb {
+  background: #3b5998;
+}
+.PressOne .Social .BtFb:hover {
+  background: #2f487d;
+}
+.PressOne .Social .BtTwitter {
+  background: #1bb2e9;
+}
+.PressOne .Social .BtTwitter:hover {
+  background: #1da4d5;
+}
+.PressOne .Social .BtFb svg,
+.PressOne .Social .BtTwitter svg {
+  position: relative;
+    top: 3px;
+    margin: 0 5px 0 0;
+}
+
+
+
+
+.PressOne .Social iframe {
+  border: none;
+  overflow: hidden;
+}
+
+.PressOne .Txt {
+  font-family: 'HelveticaNeueLTPro-Roman', Arial;
+  font-size: 13px;
+  line-height: 20px;
+  margin-bottom: 35px;
+}
+.PressOne .Txt p {
+  line-height: 20px;
+  margin-bottom: 30px;
+}
+.PressOne .Txt a {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  text-decoration: underline;
+  color: #000;
+}
+
+
+
+
+
+
+/*
+
+OTHER
+
+*/
+
+body.other #Background {
+  display: none;
+}
+
+
+
+
+/*
+
+TEMPLATE
+
+*/
+
+body.other #Background {
+  display: none;
+}
+.Page.Template .Section.Start {
+  display: block;
+  width: 100%;
+  height: 360px;
+  position: relative;
+}
+.Page.Template .Section.Start .Photo {
+  width: 100%;
+  height: 100%;
+  background-position: bottom center;
+  background-size: cover !important;
+  position: absolute;
+}
+.Page.Template .Section.Start .Photo {
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/our-properties/Background.jpg');
+  background-position: bottom center;
+  background-size: cover !important;
+  position: absolute;
+}
+.Page.Template .Section.One {
+  margin-top: -285px;
+}
+.Page.Template .Section.One .Container {
+  background: #fff;
+  padding: 30px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.Page.Template .ClFirst {
+  width: 60%;
+  padding-right: 40px;
+}
+.Page.Template .ClSecond {
+  width: 40%;
+  padding-left: 40px;
+}
+.Page.Template .Section.One h1.Title {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 40px;
+  line-height: 50px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.Page.Template .Section.One h2.SubTitle {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 25px;
+  line-height: 30px;
+  margin-bottom: 35px;
+}
+.Page.Template .Section.One h2 {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 15px;
+  line-height: 25px;
+}
+.Page.Template .Section.One p,
+.Page.Template .Section.One ul,
+.Page.Template .Section.One li {
+  font-family: 'HelveticaNeueLTPro-Roman', Arial;
+  font-size: 13px;
+  line-height: 20px;
+}
+.Page.Template .Section.One li {
+  list-style: initial;
+  margin-left: 15px;
+}
+.Page.Template .Section.One p {
+  margin-bottom: 40px;
+}
+.Page.Template .Section.One .Box .First {
+  position: relative;
+  overflow: hidden;
+}
+.Page.Template .Section.One .Photo {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0%;
+}
+.Page.Template .Section.One .Box {
+  margin-bottom: 40px;
+}
+.Page.Template .Section.One .BoxGray {
+  background: #f7f7f7;
+  padding: 30px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.Page.Template .Section.One .BoxGray h2 {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 13px;
+  line-height: 17px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.Page.Template .Section.One .BoxGray p {
+  margin-bottom: 15px;
+}
+.Page.Template .Section.One .BoxGray p:last-child {
+  margin-bottom: 0;
+}
+
+
+.Page.Template .Section.One .EcoKeyPlaces {
+  cursor: pointer;
+}
+.Page.Template .Section.One .KeyPlaces {
+  display: none;
+  margin: 20px 0 0;
+}
+.Page.Template .Section.One .KeyPlaces li {
+  width: 50%;
+  float: left;
+  padding-right: 20px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0 0 4px;
+}
+
+.Page.Template .Section.One .EcoLearnToggle {
+  cursor: pointer;
+}
+.Page.Template .Section.One .EcoLearn {
+  display: none;
+}
+.Page.Template .Section.One .Links {
+  margin-top: 20px;
+}
+.Page.Template .Section.One .Links li {
+  width: 30%;
+  float: left;
+  padding-right: 20px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.Page.Template .Section.One .Links li a {
+  color: #000;
+  text-decoration: none;
+}
+
+
+
+/*
+
+ADMIN
+
+*/
+
+body.admin #Background {
+  display: none;
+}
+body.admin #Header .Group {
+  display: none;
+}
+
+.Page.Admin {
+  width: 100%;
+  position: relative;
+  top: -195px;
+  left: 0;
+}
+.Page.Admin .Background {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.Page.Admin .Background .TopSide {
+  width: 100%;
+  height: 300px;
+  background: #e4e4e4;
+}
+.Page.Admin .Container {
+  position: relative;
+  z-index: 0;
+  padding-top: 210px;
+}
+
+.Page.Admin .SelectBuilding {
+  width: 100%;
+  height: 90px;
+  line-height: 90px;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 20px;
+  color: #000;
+  background: #e5d063;
+}
+.Page.Admin .SelectBuilding:hover {
+  background: #cfbc5a;
+}
+
+.Page.Admin .Table .Cl:nth-child(1) {
+  width: 16%;
+}
+.Page.Admin .Table .Cl:nth-child(2) {
+  width: 7%;
+}
+.Page.Admin .Table .Cl:nth-child(3) {
+  width: 15%;
+}
+.Page.Admin .Table .Cl:nth-child(4) {
+  width: 15%;
+}
+.Page.Admin .Table .Cl:nth-child(5) {
+  width: 10%;
+}
+.Page.Admin .Table .Cl:nth-child(6) {
+  width: 7%;
+}
+.Page.Admin .Table .Cl:nth-child(7) {
+  width: 15%;
+}
+.Page.Admin .Table .Cl:nth-child(8) {
+  width: 15%;
+}
+.Page.Admin .Table .Cl:nth-child(9) {
+  width: 6%;
+}
+
+.Page.Admin .Table .Header .Cl {
+  height: 65px;
+  line-height: 65px;
+  background: #e1e1e1;
+  padding: 0 30px;
+}
+.Page.Admin .Table .Header .Cl:nth-child(2n+2) {
+  background: #e4e4e4;
+}
+
+.Page.Admin .Table .Body .Row .Cl {
+  height: 85px;
+  background: #dcc860;
+}
+.Page.Admin .Table .Body .Row .Cl .Pos {
+  display: block;
+  height: 100%;
+  line-height: 85px;
+}
+.Page.Admin .Table .Body .Row .Cl .Pos.Text {
+  padding: 0 30px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.Page.Admin .Table .Body .Row .Cl:nth-child(2n+2) {
+  background: #e5d064
+}
+.Page.Admin .Table .Body .Row:nth-child(2n+2) .Cl {
+  background: #dfcd61
+}
+.Page.Admin .Table .Body .Row:nth-child(2n+2) .Cl:nth-child(2n+2) {
+  background: #e7d466
+}
+
+
+.Page.Admin .Table .Body .Row .Cl:hover {
+  background: #cfbc5a;
+}
+.Page.Admin .Table .Body .Row .Cl:hover:nth-child(2n+2) {
+  background: #d7c35e;
+}
+.Page.Admin .Table .Body .Row:nth-child(2n+2) .Cl:hover {
+  background: #d1c15b;
+}
+.Page.Admin .Table .Body .Row:nth-child(2n+2) .Cl:hover:nth-child(2n+2) {
+  background: #d9c760;
+}
+
+
+.Page.Admin .Table .Body input {
+  width: 100%;
+  background: none;
+  border: none;
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+}
+.Page.Admin .Table .Cl:nth-child(1) .Act {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 15px;
+}
+
+
+
+
+
+.Page.Admin .Input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+.Page.Admin .Input.show {
+  z-index: 2;
+}
+.Page.Admin .Input .Act {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0 30px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.Page.Admin .Input .Act .Text {
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.Page.Admin .Input .Change {
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: #dcdcdc;
+  padding: 0 14px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.Page.Admin .Input .Change.long {
+  width: 300px;
+}
+.Page.Admin .Input.show .Change {
+  display: block;
+}
+.Page.Admin .Input .Change input {
+  border: 1px solid #d6d6d6;
+  padding: 18px 15px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+}
+.Page.Admin .Input .Change .Mask {
+  width: 99999px;
+  height: 99999px;
+  display: block;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+
+
+.Page.Admin .Select {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  padding: 0 30px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.Page.Admin .Select.show {
+  z-index: 2;
+}
+.Page.Admin .Select .Act {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.Page.Admin .Select .Act .Text {
+  float: left;
+}
+.Page.Admin .Select .Act .Arrow {
+  float: right;
+}
+.Page.Admin .Select.show .Act .Arrow {
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.Page.Admin .Select .Change {
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: 85px;
+  left: 0;
+  -webkit-box-shadow: 2px 3px 8px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 2px 3px 8px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 3px 8px 0px rgba(0, 0, 0, 0.1);
+}
+.Page.Admin .Select.show .Change {
+  display: block;
+}
+.Page.Admin .Select .Change .Mask {
+  width: 99999px;
+  height: 99999px;
+  display: block;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  z-index: 1;
+  cursor: pointer;
+}
+.Page.Admin .Select .Change a {
+  display: block;
+  width: 100%;
+  height: 38px;
+  line-height: 38px;
+  background: #dcdcdc;
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 12px;
+  color: #000;
+  padding: 0 30px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+.Page.Admin .Select .Change a:nth-child(2n+2) {
+  background: #e1e1e1;
+}
+.Page.Admin .Select .Change a:hover,
+.Page.Admin .Select .Change a.active {
+  background: #434343;
+  color: #fff;
+}
+
+
+
+.Page.Admin .Table .Footer a {
+  display: block;
+  width: 100%;
+  height: 75px;
+  line-height: 75px;
+  text-align: center;
+}
+.Page.Admin .Table .Footer a.Add {
+  font-family: 'HelveticaNeueLTPro-Bd';
+  font-size: 15px;
+  background: #e3e3e3;
+}
+.Page.Admin .Table .Footer a.Preview {
+  font-family: 'HelveticaNeueLTPro-Roman';
+  font-size: 15px;
+  background: #dcdcdc;
+}
+
+
+
+
+
+@media screen and (max-width: 1240px) {
+  .NiceCheckbox {
+    padding-left: 20px;
+  }
+
+  .BreadcrumbInfo {
+    line-height: 55px;
+    font-size: 25px;
+  }
+
+  .Filter .More .Box.first {
+    width: 250px;
+  }
+
+  .Container {
+    width: 1000px;
+  }
+  .ContainerPlus {
+    width: 1080px;
+  }
+
+  .Section.Start.SliderGallery .NavArrow .Prev svg {
+    right: 20px;
+  }
+  .Section.Start.SliderGallery .NavArrow .Next svg {
+    left: 20px;
+  }
+
+
+  .Page.About .Section.Start .Inside {
+    width: 1000px;
+  }
+
+
+  /*
+
+    PAGE:
+    Corporate Housing
+
+    */
+  .Page.CorporateHousing .Section.Start {
+    height: 400px;
+  }
+
+  .Page.CorporateHousing .Section.Brochure .Slider .TabsPhoto .Tab .Photos,
+  .Page.CorporateHousing .Section.Brochure .Slider .TabsPhoto .Tab .Photo {
+    height: 260px;
+  }
+
+  .Page.CorporateHousing .Section.Description2 .Photo {
+    height: 260px;
+  }
+
+  /*
+
+    PAGE:
+    Building
+
+    */
+  .Page.Building .Section.Start {
+    height: 500px;
+  }
+  .Page.Building .Apartment {
+    padding: 30px 20px;
+  }
+  .Page.Building .Apartment .RentNow {
+    top: 30px;
+    right: 20px;
+  }
+  .Page.Building .Apartment .Name {
+    font-size: 19px;
+    line-height: 23px;
+  }
+  .Page.Building .Apartment .Data .Cl {
+    padding: 0 20px;
+  }
+  .Page.Building .Apartment .Floorplan {
+    bottom: 30px;
+    left: 20px;
+  }
+  .Page.Building .Section.Brochure .Slider .TabsPhoto .Tab .Photos,
+  .Page.Building .Section.Brochure .Slider .TabsPhoto .Tab .Photo {
+    height: 400px;
+  }
+  .Page.Building .Section.Map {
+    height: 400px;
+  }
+
+
+  /*
+
+    PAGE:
+    Blog
+
+    */
+    .Page.Blog .Post .Text {
+      width: 45%;
+    }
+    .Page.Blog .Post .Picture {
+      width: 45%;
+    }
+
+    .Page.Blog .PostOne .Text {
+      width: 70%;
+    }
+
+
+
+
+  .Page.Template .Section.One .Photo {
+    width: auto;
+    height: 100%;
+    top: 0;
+    left: -20%;
+  }
+}
+@media screen and (max-width: 1040px) {
+  .NiceCheckbox {
+    padding-left: 20px;
+  }
+
+  .Container {
+    width: 90%;
+  }
+  .ContainerPlus {
+    width: 100%;
+  }
+  #Header a {
+    font-size: 12px;
+  }
+  #Footer .Header {
+    font-size: 11px;
+  }
+
+  .Filter .More.show {
+    height: 250px;
+  }
+  .Filter .More .Box.first {
+    width: 100px;
+  }
+  .Filter .More .Box .Cl.Cl4-8 {
+    width: 100% !important;
+  }
+  .Filter .More .Box .Cl.Cl1-3 {
+    width: 50% !important;
+  }
+
+  .SliderGallery .Container {
+    width: 100%;
+  }
+
+  .Page.About .Section.Start .Inside {
+    width: 90%;
+  }
+
+  .Page.CorporateHousing .Section.Start {
+    height: 400px;
+  }
+
+  .Page.Building .Section.Start {
+    height: 400px;
+  }
+  .Page.Building .Apartment {
+    width: 50%;
+    height: 250px;
+  }
+  .Page.Building .Apartment.Blank.hide {
+    display: none !important;
+  }
+
+  .Page.Building .Section.Brochure .Slider .TabsPhoto .Tab .Photos,
+  .Page.Building .Section.Brochure .Slider .TabsPhoto .Tab .Photo {
+    height: 300px;
+  }
+
+  .Page.Building .Section.Map {
+    height: 300px;
+  }
+
+  .Filter .Handle a .Txt2 {
+    bottom: 2px;
+  }
+}
+
+
+
+
+
+
+@media screen and (max-height: 700px) {
+
+  #Header {
+    padding: 30px 0 20px;
+  }
+
+  .Filter .Handle a {
+    padding: 25px 20px;
+  }
+
+  .Page.Main .Buildings .Building.MargT {
+    margin-top: 160px;
+  }
+  .Page.Main .Buildings .Building.Size2x1 {
+    height: 160px;
+  }
+  .Page.Main .Buildings .Building.Size2x2 {
+    height: 320px;
+  }
+  .Page.Main .Buildings .Building.Size2x1 .Name {
+    font-size: 19px;
+  }
+  .Page.Main .Buildings .Building.Size2x1 .Name br {
+    display: none;
+  }
+}
+
+
+
+
+
+
+/*
+=============
+=============
+    PHONE
+=============
+=============
+*/
+
+@media screen and (min-width: 760px) {
+  #Header .MenuMobile {
+    display: none !important;
+  }
+}
+@media (max-width: 760px) {
+
+  html,
+  body {
+    height: auto;
+  }
+
+  body.home {
+    background: none;
+  }
+
+  .Page {
+    padding: 0 0 40px;
+  }
+
+  .Loader .Logo {
+    width: 132px;
+    height: 53px;
+    background-size: contain;
+  }
+
+  #Background {
+    display: none !important;
+  }
+
+  #Header {
+    background: #f1f1f1;
+    padding: 25px 0 0px;
+  }
+  #Header .Container {
+    width: 100%;
+  }
+  #Header .ContainerPlus {
+    width: 100%;
+  }
+  #Header .PadClLeft20 {
+    padding-left: 0;
+  }
+  #Header .ClLogo {
+    position: relative;
+    left: 5%;
+  }
+  #Header .Logo {
+    -ms-transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+    -ms-transform-origin: top left;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+  }
+
+  #Header .Pos {
+    display: none;
+  }
+  #Header .Client {
+    display: none;
+  }
+  #Header .BtSwitch {
+    display: block;
+    width: 30px;
+    height: 19px;
+    background: url(../img/BtMenu.png) center center no-repeat;
+    position: absolute;
+    top: -10px;
+    right: 5%;
+    z-index: 999;
+    padding: 20px 0;
+    cursor: pointer;
+  }
+  #Header .MenuMobile {
+    display: none;
+    padding-bottom: 30px;
+    background: #f1f1f1;
+  }
+  #Header .MenuMobile a {
+    display: block;
+    height: 44px;
+    font-size: 16px;
+    text-align: right;
+    padding: 8px 5%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  #Header .MenuMobile a:first-child {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  #Header .MenuMobile a.Line1 {
+    line-height: 44px;
+  }
+
+  #Footer {
+    padding-bottom: 20px;
+  }
+  #Footer .Cl.Cl1-8 {
+    width: 25%;
+    margin-bottom: 20px;
+  }
+  #Footer .Cl.Cl1-8:nth-child(4n+1) {
+    clear: both;
+  }
+
+  .Filter .Handle a {
+    width: 100%;
+    padding: 15px 20px;
+  }
+  .Filter .Handle a+a {
+    display: none;
+  }
+  .Filter .Handle a span.Txt {
+    display: none;
+  }
+  .Filter .Handle a:first-child:after {
+    content: "Filter";
+  }
+  ​ .Filter.show .More {
+    height: auto !important;
+  }
+  .Filter .More .Box {
+    display: block !important;
+    width: 100% !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.06) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+    padding-top: 50px !important;
+    padding-bottom: 10px !important;
+  }
+  .Filter .More .Box.first {
+    border-right: 1px solid rgba(0, 0, 0, 0.06) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+  }
+  .Filter .More .Box:before {
+    font-family: 'HelveticaNeueLTPro-Bd';
+    font-size: 12px;
+    color: #000;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  .Filter .More .Box:before {
+    content: "Neighborhood";
+  }
+  .Filter .More .Box+.Box:before {
+    content: "Price range";
+  }
+  .Filter .More .Box+.Box+.Box:before {
+    content: "Bathrooms";
+  }
+  .Filter .More .Box+.Box+.Box+.Box:before {
+    content: "Bedrooms";
+  }
+  .Filter .More .Box .Txt2 {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 15px;
+    font-family: 'HelveticaNeueLTPro-Roman';
+    font-size: 9px;
+  }
+
+  .Filter .More .Box .Cl.Cl4-8 {
+    width: 50% !important;
+  }
+  .Filter .More .Box .Cl.Cl1-3 {
+    width: 16% !important;
+  }
+
+  .ZoomMap {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    left: 20px;
+    font-size: 20px;
+  }
+  .ZoomMap.In {
+    top: 20px;
+  }
+  .ZoomMap.Out {
+    top: 60px;
+  }
+
+  .Breadcrumb {
+    height: 45px;
+    line-height: 45px;
+    font-size: 12px;
+    padding: 0 15px;
+  }
+
+  .infoBox {
+    opacity: 0;
+    width: 22px !important;
+    height: 42px !important;
+    overflow: hidden;
+  }
+  .infoBox .Title {
+    background: none !important;
+    background-color: red !important;
+  }
+  .infoBox .Title a {
+    width: 22px !important;
+    height: 22px !important;
+    text-indent: -99999px;
+  }
+
+  /*
+
+    PAGE:
+    Main page
+
+    */
+  .Page.Main {
+    background: #e1d77c;
+  }
+
+  .Page.Main .Video {
+    height: 250px;
+  }
+
+  .Page.Main .Video .BigPlay {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-decoration: none;
+  }
+  .computer .Page.Main .Video .BigPlay {
+    display: none;
+  }
+  .Page.Main .Video .BigPlay::after {
+    content: "Play";
+    color: #fff;
+    font-family: 'HelveticaNeueLTPro-Bd';
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+
+
+  .Page.Main.showFilter .Video {
+    height: 510px;
+  }
+  .Page.Main .Video video {
+    display: none !important;
+  }
+  .Page.Main .Video .vjs-poster {
+    display: block !important;
+    background-size: cover !important;
+  }
+
+  .Page.Main .Buildings {
+    margin-top: 0;
+  }
+  .Page.Main .Buildings .Building {
+    width: 100%;
+    height: 240px !important;
+    float: none;
+    margin: 0 !important;
+  }
+  .Page.Main .Buildings .Building:nth-child(2n) .Cl.first {
+    float: right;
+  }
+  .Page.Main .Buildings .Building:nth-child(2n) .Cl.second {
+    float: left;
+  }
+  .Page.Main .Buildings .Building.invert:nth-child(2n) .Cl.first {
+    float: left;
+  }
+  .Page.Main .Buildings .Building.invert:nth-child(2n) .Cl.second {
+    float: right;
+  }
+  .Page.Main .Buildings .Building .Cl.first {
+    float: left;
+  }
+  .Page.Main .Buildings .Building .Cl.second {
+    float: right;
+  }
+  .Page.Main .Buildings .Building.invert .Cl.first {
+    float: right;
+  }
+  .Page.Main .Buildings .Building.invert .Cl.second {
+    float: left;
+  }
+  .Page.Main .Buildings .Building .Address {
+    left: 10px;
+    padding-right: 30px;
+  }
+  .Page.Main .Buildings .Building .Name {
+    font-size: 17px !important;
+    line-height: 22px !important;
+    left: 10px;
+    padding-right: 30px;
+  }
+  .Page.Main .Buildings .Building .Units {
+    left: 10px;
+  }
+  .Page.Main .Section.Map {
+    height: 180px;
+    background-color: #f1f1f1;
+    padding-bottom: 40px;
+    margin-bottom: -40px;
+  }
+
+
+  /*
+
+       PAGE:
+       OurProperties
+
+       */
+  .Page.OurProperties .Section.Start {
+    height: 540px;
+  }
+  .Page.OurProperties .Section.Start .Inside {
+    padding: 0;
+  }
+  .Page.OurProperties .Section.Start .Inside .TableCell {
+    padding: 55px 0 240px;
+  }
+  .Page.OurProperties .Section.Start .Inside .Title {
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .Page.OurProperties .Section.Start .Inside .Text {
+    width: auto;
+    font-size: 14px;
+    line-height: 19px;
+  }
+  .Page.OurProperties .Buildings .Building {
+    width: 100%;
+    height: 280px !important;
+    float: none;
+    margin: 0 !important;
+  }
+  .Page.OurProperties .Buildings .Building .Address {
+    font-size: 11px;
+    line-height: 15px;
+  }
+  .Page.OurProperties .Buildings .Building .Address {
+    left: 10px;
+    padding-right: 30px;
+  }
+  .Page.OurProperties .Buildings .Building .Name {
+    font-size: 17px !important;
+    line-height: 22px !important;
+    left: 10px;
+    padding-right: 30px;
+  }
+  .Page.OurProperties .Buildings .Building .Units {
+    left: 10px;
+  }
+  .Page.OurProperties .Buildings .Building .Description {
+    display: none;
+  }
+  .Page.OurProperties .Section.Map {
+    height: 180px;
+  }
+
+
+  /*
+
+    PAGE:
+    Single Building
+
+    */
+  .Page.Building .BreadcrumbInfo {
+    height: 45px;
+    line-height: 45px;
+    font-size: 12px;
+    padding: 0 15px;
+  }
+
+  .Page.Building .Section.Start {
+    height: 260px;
+  }
+  .Page.Building .Section.Start .Nav {
+    bottom: 20px;
+  }
+  .Page.Building .Section.Description {
+    padding-bottom: 30px;
+  }
+  .Page.Building .Section.Description .Mask {
+    display: none;
+  }
+  .Page.Building .Section.Description .Title {
+    font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+
+  .Page.Building .Section.Description .Cl {
+    display: block !important;
+    width: 100%;
+    padding: 0;
+  }
+  .Page.Building .Filter .More .Box.first {
+    display: none !important;
+  }
+  .Page.Building .Apartment {
+    width: 50%;
+    padding: 15px 15px;
+  }
+  .Page.Building .Apartment.Blank.hide {
+    display: none !important;
+  }
+  .Page.Building .Apartment .Name {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .Page.Building .Apartment .RentNow {
+    top: 15px;
+    right: 15px;
+    font-size: 10px;
+  }
+  .Page.Building .Apartment .Floorplan {
+    bottom: 15px;
+    left: 15px;
+  }
+  .Page.Building .Apartment .Data {
+    font-size: 9px;
+  }
+
+  .Page.Building .Section.Brochure {
+    overflow: hidden;
+  }
+  .Page.Building .Section.Brochure .Slider .TabsPhoto .Tab .Photos,
+  .Page.Building .Section.Brochure .Slider .TabsPhoto .Tab .Photo {
+    height: 260px;
+  }
+  .Page.Building .Section.Brochure .Slider .TabsNav .Tab {
+    height: 60px;
+    line-height: 15px;
+    font-size: 10px;
+    padding: 15px 5px;
+  }
+  .Page.Building .Section.Brochure .Slider .TabsContent .Tab .Content {
+    padding-top: 40px;
+    padding-bottom: 0px;
+  }
+  .Page.Building .Section.Brochure .Slider .TabsContent .Tab .Content .Cl {
+    display: block !important;
+    width: 100%;
+    padding: 0;
+  }
+  .Page.Building .Section.Brochure .Slider .TabsContent .Tab .Content .Title {
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 20px;
+  }
+  .Page.Building .Section.Brochure .Slider .TabsArrow {
+    bottom: -50px;
+    left: 0px;
+  }
+  .Page.Building .Section.Brochure .Slider .TabsArrow a {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+  }
+
+  .Page.Building .Section.Amenities {
+    margin-bottom: 40px;
+  }
+  .Page.Building .Section.Amenities .Cl {
+    display: block !important;
+    width: 100%;
+  }
+  .Page.Building .Section.Amenities .H330 {
+    height: 260px;
+  }
+  .Page.Building .Section.Floorplans {
+    height: 450px;
+    margin-bottom: 40px;
+  }
+
+  .Page.Building .Section.Floorplans .Floorplan {
+    padding: 120px 30px 40px;
+  }
+  .Page.Building .Section.Floorplans .Floorplan .Pic {
+    background-position: bottom center;
+  }
+  .Page.Building .Section.Floorplans .Floorplan .Header {
+    top: 20px;
+  }
+  .Page.Building .Section.Floorplans .Floorplan .Header .Size1 {
+    font-size: 10px;
+  }
+  .Page.Building .Section.Floorplans .Floorplan .Header .Title {
+    font-size: 19px;
+    margin: 5px 0 5px;
+  }
+
+  .Page.Building .Section.Eco {
+    margin-bottom: 20px;
+  }
+  .Page.Building .Section.Eco .Cl {
+    display: block !important;
+    width: 100%;
+    padding: 0;
+  }
+  .Page.Building .Section.Eco .Cl {
+    margin-bottom: 20px;
+  }
+  .Page.Building .Section.Eco .Cl+.Cl {
+    margin-bottom: 0;
+  }
+  .Page.Building .Section.Map {
+    height: 180px;
+  }
+
+  .Page.Building .FloorplanOverlay.show {
+    display: none;
+  }
+
+
+  /*
+
+   PAGE:
+   Corporate housing
+
+   */
+  .Page.CorporateHousing .Section.Start {
+    height: 260px;
+  }
+  .Page.CorporateHousing .Section.Description {
+    padding-bottom: 30px;
+  }
+  .Page.CorporateHousing .Section.Description .Mask {
+    display: none;
+  }
+  .Page.CorporateHousing .Section.Description .Title {
+    font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+  .Page.CorporateHousing .Section.Description .Cl {
+    display: block !important;
+    width: 100%;
+    padding: 0;
+  }
+
+
+  .Page.CorporateHousing .Section.Brochure .Slider .TabsPhoto .Tab .Photos,
+  .Page.CorporateHousing .Section.Brochure .Slider .TabsPhoto .Tab .Photo {
+    height: 260px;
+  }
+  .Page.CorporateHousing .Section.Brochure .Slider .TabsNav .Tab {
+    height: 60px;
+    line-height: 15px;
+    font-size: 10px;
+    padding: 15px 5px;
+  }
+  .Page.CorporateHousing .Section.Brochure .Slider .TabsContent .Tab .Content {
+    padding-top: 40px;
+    padding-bottom: 0px;
+  }
+  .Page.CorporateHousing .Section.Brochure .Slider .TabsContent .Tab .Content .Cl {
+    display: block !important;
+    width: 100%;
+    padding: 0;
+  }
+  .Page.CorporateHousing .Section.Brochure .Slider .TabsContent .Tab .Content .Title {
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 20px;
+  }
+
+
+  .Page.CorporateHousing .Section.Description2 .Photo {
+    height: 260px;
+  }
+  .Page.CorporateHousing .Section.Description2 .Inside .Cl {
+    display: block;
+    width: 100%;
+    padding: 5%;
+  }
+  .Page.CorporateHousing .Section.Description2 .Inside .Title {
+    margin-bottom: 20px;
+  }
+
+
+
+  /*
+
+    PAGE:
+    About
+
+    */
+  .Page.About .Section.Start {
+    height: auto;
+  }
+  .Page.About .Section.Start .Inside {
+    display: none;
+  }
+  .Page.About .Section.Start .Inside .TableCell {
+    padding: 35px 0 0px;
+  }
+
+  .Page.About .Section.StartPhone {
+    display: block;
+    background: #e9d762;
+    padding-top: 50px;
+  }
+  .Page.About .Section.StartPhone .Title {
+    font-family: 'HelveticaNeueLTPro-Bd';
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 20px;
+  }
+  .Page.About .Section.StartPhone .Title br {
+    display: none;
+  }
+  .Page.About .Section.StartPhone .Text {
+    width: auto;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .Page.About .Section.History {
+    padding: 50px 0;
+  }
+  .Page.About .Section.History .Cl {
+    display: block !important;
+    width: 100%;
+    padding: 0;
+  }
+
+
+  .Page.About .Section.History .Cl {
+    margin-bottom: 20px;
+  }
+  .Page.About .Section.History .Cl+.Cl {
+    margin-bottom: 0;
+  }
+  .Page.About .Section.History p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .Page.About .Section.Team .Header {
+    font-size: 20px;
+    line-height: 25px;
+    padding: 0;
+    margin-bottom: 40px;
+  }
+  .Page.About .Section.Team .Mask {
+    display: none !important;
+  }
+  .Page.About .Section.Team .Person {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .Page.About .Section.Team .Person .Photo {
+    width: 70px;
+    height: 70px;
+  }
+  .Page.About .Section.Team .Person .Name {
+    font-family: 'HelveticaNeueLTPro-Bd';
+    font-size: 17px;
+    line-height: 20px;
+    margin-bottom: 4px;
+  }
+  .Page.About .Section.Team .Person .Text {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 20px;
+  }
+
+
+
+  .Page.About .Section.Investors {
+    padding: 50px 0;
+  }
+  .Page.About .Section.Investors .Cl {
+    display: block !important;
+    width: 100%;
+    padding: 0;
+  }
+  .Page.About .Section.Investors .Cl {
+    margin-bottom: 20px;
+  }
+  .Page.About .Section.Investors .Cl+.Cl {
+    margin-bottom: 0;
+  }
+  .Page.About .Section.Investors p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .Page.About .Section.Careers {
+    padding: 50px 0;
+  }
+  .Page.About .Section.Careers .Cl {
+    display: block !important;
+    width: 100%;
+    padding: 0;
+  }
+  .Page.About .Section.Careers .Cl {
+    margin-bottom: 20px;
+  }
+  .Page.About .Section.Careers .Cl+.Cl {
+    margin-bottom: 0;
+  }
+  .Page.About .Section.Careers .Popup {
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  .Page.About .Section.Careers .Popup .Box {
+    height: auto;
+  }
+  .Page.About .Section.Careers .Popup .Title {
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .Page.About .Section.Careers .Popup .Text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+
+  /*
+
+    PAGE:
+    Social Responsibilities
+
+    */
+  .Page.SocialResponsibilities .Section.Start {
+    height: 300px;
+  }
+  .Page.SocialResponsibilities .Section.Start .Inside {
+    padding: 0;
+  }
+  .Page.SocialResponsibilities .Section.Start .Inside .TableCell {
+    padding: 35px 0 0px;
+  }
+  .Page.SocialResponsibilities .Section.Start .Inside .Title {
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 20px;
+  }
+
+  .Page.SocialResponsibilities .Section.Content {
+    padding: 50px 0;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .Page.SocialResponsibilities .Section.Content .Cl {
+    display: block !important;
+    width: 100%;
+    padding: 0;
+  }
+  .Page.SocialResponsibilities .Section.Content .Cl {
+    margin-bottom: 10px;
+  }
+  .Page.SocialResponsibilities .Section.Content .Cl.Cl4-8 {
+    margin-bottom: 20px;
+  }
+  .Page.SocialResponsibilities .Section.Content .Cl .Cl {
+    margin-bottom: 10px;
+  }
+  .Page.SocialResponsibilities .Section.Content .Cl+.Cl {
+    margin-bottom: 10px;
+  }
+  .Page.SocialResponsibilities .Section.Content .Text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .Page.SocialResponsibilities .Section.Content p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .Page.SocialResponsibilities .Section.Content .Mask {
+    display: none;
+  }
+  .Page.SocialResponsibilities .Section.Content h1 {
+    font-size: 20px;
+    line-height: 25px;
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+  .Page.SocialResponsibilities .Section.Content h2 {
+    font-size: 17px;
+    line-height: 22px;
+    padding: 0;
+    margin: 0 0 10px 0;
+  }
+  .Page.SocialResponsibilities .Section.Content .Enter {
+    display: none;
+  }
+  .Page.SocialResponsibilities .Section.Footer .Mask {
+    display: none;
+  }
+  .Page.SocialResponsibilities .Section.Footer .Inside {
+    padding: 50px 0;
+  }
+  .Page.SocialResponsibilities .Section.Footer .Inside h2 {
+    font-size: 20px;
+    line-height: 25px;
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+  .Page.SocialResponsibilities .Section.Footer .Inside .Text {
+    width: 100%;
+  }
+  .Page.SocialResponsibilities .Section.Footer p.Big {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  .Page.SocialResponsibilities .Section.Footer p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+
+
+  /*
+
+    PAGE:
+    Contact
+
+    */
+  .Page.Contact .Section.Form {
+    padding-bottom: 30px;
+  }
+  .Page.Contact h2 {
+    font-size: 17px;
+    line-height: 22px;
+    padding: 0;
+    margin: 20px 0 10px 0;
+  }
+  .Page.Contact .Cl.Cl3-8,
+  .Page.Contact .Cl.Cl5-8 {
+    width: 100%;
+    padding: 0;
+  }
+  .Page.Contact .Bt {
+    height: 60px;
+    line-height: 60px;
+  }
+  .Page.Contact .Bt .Icon {
+    padding: 0 10px 0 15px;
+  }
+  .Page.Contact .Bt .Icon svg {
+    -ms-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.8);
+  }
+  .Page.Contact .RollContent .Address {
+    padding: 15px;
+  }
+  .Page.Contact .RollContent .Address .Title {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  .Page.Contact .RollContent .Address .Text {
+    font-size: 12px;
+    line-height: 17px;
+  }
+  .Page.Contact .RollContent .Address .Text p {
+    line-height: 17px;
+  }
+  .Page.Contact .Contacts .Contact {
+    padding: 20px 15px;
+  }
+  .Page.Contact .Contacts .Contact .Title {
+    font-size: 12px;
+  }
+  .Page.Contact .Contacts .Contact .Text .Number {
+    font-size: 12px;
+  }
+  .Page.Contact .Contacts .Contact .Text .Email {
+    font-size: 12px;
+  }
+  .Page.Contact form .Cl.Cl4-8 {
+    width: 100%;
+    padding: 0;
+  }
+  .Page.Contact input[type="text"],
+  .Page.Contact textarea {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+  }
+  .Page.Contact textarea {
+    height: 150px;
+  }
+  .Page.Contact .Select .SelectAct {
+    height: 40px;
+    line-height: 40px;
+  }
+  .Page.Contact .Select .SelectAct .Arrow {
+    height: 40px;
+    overflow: hidden;
+  }
+  .Page.Contact .Select .SelectAct .Arrow svg {
+    position: relative;
+    top: -5px;
+  }
+  .Page.Contact .Select .Dropdown {
+    top: 40px;
+  }
+
+  .Page.Contact .Touch {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 1);
+  }
+
+
+
+
+  /*
+
+  PAGE:
+  Blog
+
+  */
+  .Page.Blog .Section.Start {
+    height: 220px;
+  }
+  .Page.Blog .Section.Start .Inside .Title {
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .Page.Blog .Post {
+    position: relative;
+    padding-top: 200px;
+  }
+  .Page.Blog .Post .Text {
+    width: 100%;
+  }
+  .Page.Blog .Post .Text .Date {
+    margin-bottom: 10px;
+  }
+  .Page.Blog .Post .Text .Title {
+    font-size: 17px !important;
+    line-height: 22px !important;
+    margin-bottom: 25px;
+  }
+  .Page.Blog .Post .Text .Excerpt,
+  .Page.Blog .Post .Text .Excerpt p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .Page.Blog .Post .Picture {
+    width: 90%;
+    height: 160px;
+    margin-top: 0;
+    position: absolute;
+    top: 20px;
+    left: 5%;
+  }
+  .Page.Blog .Section.One {
+    margin-top: -175px;
+  }
+  .Page.Blog .PostOne .Text {
+    width: 100%;
+  }
+  .Page.Blog .PostOne .Text .Date {
+    margin-bottom: 10px;
+  }
+  .Page.Blog .PostOne .Text .Picture {
+    height: 200px;
+  }
+  .Page.Blog .PostOne .Text .Title {
+    font-size: 17px !important;
+    line-height: 22px !important;
+    margin-bottom: 25px;
+  }
+  .Page.Blog .PostOne .Text .Txt,
+  .Page.Blog .PostOne .Text .Txt p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .Page.Blog .PostOne .Comments ol li {
+    font-size: 11px;
+    line-height: 18px;
+    padding: 10px 0;
+  }
+  .Page.Blog .PostOne .comment-form-comment textarea {
+    width: 80%;
+  }
+
+
+
+
+  /*
+
+    PAGE:
+    Press
+
+    */
+  .Page.Press .Section.Start {
+    height: 220px;
+  }
+  .Page.Press .Section.Start .Inside .Title {
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .Page.Press .Post {
+    position: relative;
+    padding: 240px 0 40px;
+  }
+  .Page.Press .Post .Text {
+    width: 100%;
+    padding: 0;
+  }
+  .Page.Press .Post .Text .Date {
+    margin-bottom: 10px;
+  }
+  .Page.Press .Post .Text .Title {
+    font-size: 17px !important;
+    line-height: 22px !important;
+    margin-bottom: 25px;
+  }
+  .Page.Press .Post .Text .Excerpt,
+  .Page.Press .Post .Text .Excerpt p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .Page.Press .Post .Picture {
+    width: 100%;
+    height: 160px;
+    position: absolute;
+    top: 40px;
+  }
+  .Page.Press .Section.One {
+    margin-top: -175px;
+  }
+
+  .PressOne {
+    padding: 95px 0;
+  }
+  .PressOne .Container {
+    left: 0;
+  }
+  .PressOne .Picture {
+    height: 200px;
+  }
+  .PressOne .Info,
+  .PressOne .Text {
+    padding: 6%;
+  }
+  .PressOne .Title {
+    font-size: 23px;
+    line-height: 33px;
+  }
+  .PressOne .Date {
+    padding-bottom: 40px;
+  }
+  .PressOne .FirstParagraf {
+    font-size: 15px;
+    line-height: 23px;
+    margin-bottom: 30px;
+  }
+
+
+
+
+
+  .Page.Template .Section.Start {
+    height: 220px;
+  }
+  .Page.Template .Section.One {
+    margin-top: -175px;
+  }
+  .Page.Template .ClFirst,
+  .Page.Template .ClSecond {
+    width: 100%;
+    padding: 0;
+  }
+  .Page.Template .ClFirst {
+    margin-bottom: 40px;
+  }
+  .Page.Template .Section.One p,
+  .Page.Template .Section.One ul,
+  .Page.Template .Section.One li {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .Page.Template .Section.One h1.Title {
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .Page.Template .Section.One h2.SubTitle {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .Page.Template .Section.One .Box .First,
+  .Page.Template .Section.One .Box .Second {
+    display: block !important;
+    width: 100% !important;
+    padding: 7px 0;
+  }
+  .Page.Template .Section.One .Box .First {
+    height: 200px;
+  }
+  .Page.Template .Section.One .Photo {
+    width: auto;
+    height: 100%;
+    position: static;
+  }
+}
+@media (max-width: 760px) and (orientation: landscape) {
+
+  #Header {
+    padding: 20px 0 0px;
+  }
+  #Header .ClLogo {
+    height: 45px;
+  }
+  #Header .Logo {
+    -ms-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+    -ms-transform-origin: top left;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+  }
+  #Header .BtSwitch {
+    -ms-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    -ms-transform-origin: top right;
+    -webkit-transform-origin: top right;
+    transform-origin: top right;
+  }
+  #Header .MenuMobile a {
+    font-size: 13px;
+    padding: 4px 5%;
+  }
+
+  .Page.Building .Apartment {
+    width: 33.33%;
+  }
+  .Page.Building .Section.Brochure .Slider .TabsNav .Tab {
+    padding: 15px 60px 15px 5px;
+  }
+}
+@media (max-width: 760px) and (orientation: portrait) {
+  #Footer .Cl.Cl1-8 {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+
+/*
+=============
+=============
+    IPAD
+=============
+=============
+*/
+
+@media (min-width: 760px) and (max-width: 1025px) {
+
+  html,
+  body {
+    height: auto;
+  }
+
+  .Page {
+    padding: 0 0 50px;
+  }
+
+  #Header .ClLogo {
+    height: 45px;
+    margin-top: 10px;
+  }
+  #Header .Logo {
+    -ms-transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+    -ms-transform-origin: top left;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+  }
+  #Header a {
+    font-size: 11px;
+  }
+
+  #Footer {
+    padding-bottom: 40px;
+  }
+
+  .Breadcrumb {
+    height: 55px;
+    line-height: 55px;
+  }
+
+  .Filter .Handle a {
+    padding: 20px 20px;
+  }
+  .Filter .More .Box {
+    display: block !important;
+    float: left !important;
+    width: 25% !important;
+    padding: 15px 20px;
+  }
+
+  .ZoomMap {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    left: 20px;
+    font-size: 20px;
+  }
+  .ZoomMap.In {
+    top: 20px;
+  }
+  .ZoomMap.Out {
+    top: 60px;
+  }
+
+
+  /*
+
+    PAGE:
+    Main page
+
+    */
+  .Page.Main .Video .BigPlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .Page.Main .Filter .More {
+    top: 62px !important;
+  }
+
+  .Page.Main .Buildings .Building .Name {
+    font-size: 17px !important;
+    line-height: 20px !important;
+  }
+  .Page.Main .Buildings .Building.MargT {
+    margin-top: 130px;
+  }
+  .Page.Main .Buildings .Building.Size2x1 {
+    height: 130px;
+  }
+  .Page.Main .Buildings .Building.Size2x2 {
+    height: 260px;
+  }
+  .Page.Main .Section.Map {
+    height: 350px;
+  }
+
+  /*
+
+    PAGE:
+    Our Properties
+
+    */
+  .Page.OurProperties .Section.Start .Inside .Title {
+    font-size: 30px;
+    line-height: 35px;
+  }
+  .Page.OurProperties .Section.Start .Inside .Text {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .Page.OurProperties .Buildings .Building .Description .Txt,
+  .Page.OurProperties .Buildings .Building .Description .Txt p {
+    font-size: 11px;
+    line-height: 17px;
+  }
+
+
+  /*
+
+    PAGE:
+    Building
+
+    */
+  .Page.Building .Section.Brochure .Slider .TabsNav .Tab {
+    line-height: 18px;
+    padding: 20px 30px;
+  }
+  .Page.Building .Section.Brochure .Slider .TabsContent .Tab .Content .Title {
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 20px;
+  }
+
+
+  /*
+
+    PAGE:
+    About
+
+    */
+  .Page.About .Section.Start .Inside .Title {
+    font-size: 23px;
+    line-height: 33px;
+    margin-right: 60px;
+  }
+  .Page.About .Section.Start .Inside .Text {
+    font-size: 13px;
+    line-height: 21px;
+  }
+  .Page.About .Section.Team .Person .Photo {
+    width: 80px;
+    height: 80px;
+  }
+  .Page.About .Section.Team .Person .Name {
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 5px;
+  }
+  .Page.About .Section.Investors {
+    padding: 150px 0 80px;
+  }
+  .Page.About .Section.Careers .Popup .Title {
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 15px;
+  }
+  .Page.About .Section.Careers .Popup .Text {
+    font-size: 11px;
+    line-height: 15px;
+  }
+
+
+  /*
+
+   PAGE:
+   Social Responsibilities
+
+   */
+  .Page.SocialResponsibilities .Section.Start {
+    height: 400px;
+  }
+  .Page.SocialResponsibilities .Section.Start .Inside .TableCell {
+    padding: 25px 0 0;
+  }
+  .Page.SocialResponsibilities .Section.Start .Inside .Title {
+    font-size: 30px;
+    line-height: 35px;
+  }
+  .Page.SocialResponsibilities .Section.Start .Inside .Text {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .Page.SocialResponsibilities .Section.Content {
+    padding-bottom: 50px;
+  }
+  .Page.SocialResponsibilities .Section.Content h1 {
+    font-size: 35px;
+    padding: 20px 30px 0 30px;
+    margin-bottom: 60px;
+  }
+  .Page.SocialResponsibilities .Section.Content h2 {
+    font-size: 20px;
+  }
+  .Page.SocialResponsibilities .Section.Content .Enter {
+    height: 40px;
+  }
+  .Page.SocialResponsibilities .Section.Footer .Inside {
+    padding: 130px 0 80px;
+  }
+
+
+  /*
+
+    PAGE:
+    Contact
+
+    */
+  .Page.Contact .Section.Form {
+    padding-bottom: 30px;
+  }
+  .Page.Contact h2 {
+    font-size: 17px;
+    line-height: 22px;
+    padding: 0;
+    margin: 20px 0 10px 0;
+  }
+
+  .Page.Contact .Bt {
+    height: 60px;
+    line-height: 60px;
+  }
+  .Page.Contact .Bt .Icon {
+    padding: 0 10px 0 15px;
+  }
+  .Page.Contact .Bt .Icon svg {
+    -ms-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+  .Page.Contact .RollContent .Address {
+    padding: 15px;
+  }
+  .Page.Contact .RollContent .Address .Title {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  .Page.Contact .RollContent .Address .Text {
+    font-size: 12px;
+    line-height: 17px;
+  }
+  .Page.Contact .RollContent .Address .Text p {
+    line-height: 17px;
+  }
+  .Page.Contact .Contacts .Contact {
+    padding: 20px 15px;
+  }
+  .Page.Contact .Contacts .Contact .Title {
+    font-size: 12px;
+  }
+  .Page.Contact .Contacts .Contact .Text .Number {
+    font-size: 12px;
+  }
+  .Page.Contact .Contacts .Contact .Text .Email {
+    font-size: 12px;
+  }
+  .Page.Contact form .Cl.Cl4-8 {
+    width: 100%;
+    padding: 0;
+  }
+  .Page.Contact input[type="text"],
+  .Page.Contact textarea {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+  }
+  .Page.Contact textarea {
+    height: 150px;
+  }
+  .Page.Contact .Select .SelectAct {
+    height: 40px;
+    line-height: 40px;
+  }
+  .Page.Contact .Select .SelectAct .Arrow {
+    height: 40px;
+    overflow: hidden;
+  }
+  .Page.Contact .Select .SelectAct .Arrow svg {
+    position: relative;
+    top: -5px;
+  }
+  .Page.Contact .Select .Dropdown {
+    top: 40px;
+  }
+
+  /*
+
+   PAGE:
+   Blog
+
+   */
+   .Page.Blog .Section.One {
+    margin-top: -305px;
+  }
+
+  /*
+
+   PAGE:
+   Press
+
+   */
+  .Page.Press .Section.One {
+    margin-top: -305px;
+  }
+
+  .PressOne .Container {
+    left: 0;
+  }
+
+  /*
+
+    PAGE:
+    Template
+
+    */
+  .Page.Template .Section.One .Links li {
+    width: 100%;
+  }
+}
+
+@media (min-width: 760px) and (max-width: 1025px) and (orientation: portrait) {
+
+  #Footer {
+    padding-bottom: 20px;
+  }
+  #Footer .Cl.Cl1-8 {
+    width: 25%;
+    margin-bottom: 20px;
+  }
+  #Footer .Cl.Cl1-8:nth-child(4n+1) {
+    clear: both;
+  }
+
+  /*
+
+    PAGE:
+    Social Responsibilities
+
+    */
+  .Page.SocialResponsibilities .Section.Content h1 {
+    padding: 20px 30px 0 0px;
+  }
+  .Page.SocialResponsibilities .Section.Content .Cl {
+    display: block !important;
+    width: 100%;
+    padding: 0;
+  }
+  .Page.SocialResponsibilities .Section.Content .Cl {
+    margin-bottom: 10px;
+  }
+  .Page.SocialResponsibilities .Section.Content .Cl.Cl4-8 {
+    margin-bottom: 20px;
+  }
+  .Page.SocialResponsibilities .Section.Content .Cl .Cl {
+    margin-bottom: 10px;
+  }
+  .Page.SocialResponsibilities .Section.Content .Cl+.Cl {
+    margin-bottom: 10px;
+  }
+  .Page.SocialResponsibilities .Section.Content .Enter {
+    display: none;
+  }
+
+
+  /*
+
+    PAGE:
+    Contact
+
+    */
+  .Page.Contact .Cl.Cl3-8,
+  .Page.Contact .Cl.Cl5-8 {
+    width: 50%;
+  }
+
+  /*
+
+    PAGE:
+    Blog
+
+    */
+    .Page.Blog .PostOne .Text {
+      width: 100%;
+    }
+  /*
+
+    PAGE:
+    Press
+
+    */
+  .PressOne .Text {
+    width: 100%;
+  }
+
+
+}
+
+
+@media (min-width: 760px) and (max-width: 1025px) and (orientation: landscape) {
+
+  /*
+
+    PAGE:
+    Building
+
+    */
+  .Page.Building .Apartment {
+    width: 33.33%;
+  }
+}
